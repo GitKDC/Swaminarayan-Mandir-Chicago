@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HeroSection from '../src/components/HeroSection'
 import './App.css'
 import AboutPage from './pages/AboutPage';
