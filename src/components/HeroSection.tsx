@@ -22,7 +22,7 @@ const aboutSections = [
   },
   {
     id: 2,
-    category: "Udhhav Sampraday",
+    category: "Uddhav Sampraday",
     title: "About Udhhav Sampraday",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
   },
@@ -38,12 +38,12 @@ const aboutCategories = ["Bhagwan Swaminarayan", "Uddhav Sampraday", "Our Journe
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
-  const [activeCategory, setActiveCategory] = useState("All");
   const [activeAbout, setActiveAbout] = useState("Bhagwan Swaminarayan");
 
   const filteredAbout = aboutSections.filter(
-  section => section.category === activeAbout
-);
+    section => section.category === activeAbout
+  );
+  console.log(filteredAbout);
 
   // Auto slide every 5 seconds
   useEffect(() => {
@@ -183,7 +183,7 @@ export default function HeroCarousel() {
           {aboutCategories.map((category) => (
             <Button
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setActiveAbout(category)}
               className={`px-4 py-2 rounded-md transition
                 ${activeAbout === category
                   ? "bg-orange-600 text-white"
@@ -206,6 +206,7 @@ export default function HeroCarousel() {
                 <p className="text-gray-700">
                   {item.description}
                 </p>
+
               </div>
             ))}
         </div>

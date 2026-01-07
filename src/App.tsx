@@ -10,6 +10,7 @@ import GalleryPage from './pages/GalleryPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DarshanPage from './pages/DarshanPage';
+import HomePage from './pages/HomePage';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path='/' element={<HeroSection />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/books' element={<BooksPage />} />
           <Route path='/darshan' element={<DarshanPage />} />

@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #9a1c1c;        /* temple red */
+  --color-primary-foreground: #ffffff;
+
+  --color-saffron: #f4a261;
+  --color-saffron-light: #fde6c8;
+
+  /* Backgrounds */
+  --color-background: #faf7f4;
+  --color-card: #ffffff;
+  --color-muted: #6b7280;
+
+  /* Gradients */
+  --gradient-sacred: linear-gradient(
+    180deg,
+    #fffaf5 0%,
+    #faf7f4 100%
+  );
+
+  --gradient-saffron: linear-gradient(
+    135deg,
+    #f4a261,
+    #e76f51
+  );
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Radius */
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .temple-card {
+    @apply bg-card rounded-2xl
+           p-8
+           border border-black/5
+           transition-all duration-300
+  }
+  .temple-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .sacred-heading {
+    position: relative;
+  }
+
+  .sacred-heading::after {
+    content: "✦";
+    display: block;
+    margin: 0.5rem auto 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+  }
+}
+
