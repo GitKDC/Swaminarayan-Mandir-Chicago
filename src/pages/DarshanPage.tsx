@@ -5,7 +5,7 @@ import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 export default function DarshanPage() {
   return (
-    <main className="pt-20 bg-white-200">
+    <main className="pt-20 bg-bg-page">
 
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">

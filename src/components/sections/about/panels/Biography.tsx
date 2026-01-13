@@ -24,7 +24,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Birth Details',
     subtitle: 'The Divine Arrival',
-    imageUrl: 'https://placehold.co/600x400/b11226/ffffff?text=Birth+of+Ghanshyam',
+    imageUrl: 'src/assets/Birth.jpg',
     imagePosition: 'right',
     content: [
       'Born on Chaitra sud 9, VS 1837 (2nd April 1781) - Ramnavmi, in the sacred land of Chhapaiya, near Ayodhya.',
@@ -42,7 +42,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Van-Vicharan',
     subtitle: 'The Sacred Journey',
-    imageUrl: 'https://placehold.co/600x400/9d0b0b/ffffff?text=Forest+Journey',
+    imageUrl: 'src/assets/Birth.jpg',
     imagePosition: 'left',
     content: [
       'At the tender age of 11 years, 3 months, and 1 day, young Nilkanth embarked on a seven-year spiritual pilgrimage across the Indian subcontinent.',
