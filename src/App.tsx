@@ -1,6 +1,4 @@
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HeroSection from '../src/components/HeroSection'
 import './App.css'
 import AboutPage from './pages/AboutPage';
 import BooksPage from './pages/BooksPage';

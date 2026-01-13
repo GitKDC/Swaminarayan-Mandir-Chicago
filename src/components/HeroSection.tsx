@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useState } from "react";
 
 import Hero1 from "@/assets/Hero1.jpeg"
@@ -7,43 +5,41 @@ import Hero2 from "@/assets/Hero2.jpeg"
 import Hero3 from "@/assets/Hero3.jpeg"
 
 import { motion } from "framer-motion";
-import { Button } from "./ui/Button";
 
 const images = [
    Hero1, Hero2, Hero3
 ];
 
-const aboutSections = [
-  {
-    id: 1,
-    category: "Bhagwan Swaminarayan",
-    title: "About Bhagwan Swaminarayan",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
-  },
-  {
-    id: 2,
-    category: "Uddhav Sampraday",
-    title: "About Udhhav Sampraday",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
-  },
-  {
-    id: 3,
-    category: "Our Journey",
-    title: "Our Journey",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
-  }
-]
+// const aboutSections = [
+//   {
+//     id: 1,
+//     category: "Bhagwan Swaminarayan",
+//     title: "About Bhagwan Swaminarayan",
+//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
+//   },
+//   {
+//     id: 2,
+//     category: "Uddhav Sampraday",
+//     title: "About Udhhav Sampraday",
+//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
+//   },
+//   {
+//     id: 3,
+//     category: "Our Journey",
+//     title: "Our Journey",
+//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam nesciunt accusantium assumenda veritatis ducimus commodi optio, asperiores aspernatur repudiandae exercitationem eum maxime beatae sint sunt hic qui ratione reprehenderit? Saepe voluptates vitae amet iste numquam ab sunt, voluptatibus repudiandae assumenda mollitia velit impedit pariatur quia inventore officia illo. Quibusdam."
+//   }
+// ]
 
-const aboutCategories = ["Bhagwan Swaminarayan", "Uddhav Sampraday", "Our Journey"];
+// const aboutCategories = ["Bhagwan Swaminarayan", "Uddhav Sampraday", "Our Journey"];
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
-  const [activeAbout, setActiveAbout] = useState("Bhagwan Swaminarayan");
 
-  const filteredAbout = aboutSections.filter(
-    section => section.category === activeAbout
-  );
-  console.log(filteredAbout);
+  // const filteredAbout = aboutSections.filter(
+  //   section => section.category === activeAbout
+  // );
+  // console.log(filteredAbout);
 
   // Auto slide every 5 seconds
   useEffect(() => {
