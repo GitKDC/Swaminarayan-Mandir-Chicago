@@ -3,7 +3,7 @@ import { Button } from "../components/ui/Button";
 
 export default function BooksPage() {
   return (
-    <main className="pt-20 bg-orange-200">
+    <main className="pt-20 bg-bg-page">
 
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">
