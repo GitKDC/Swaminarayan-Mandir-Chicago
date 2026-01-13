@@ -1,4 +1,4 @@
-import GalleryItem from "../components/GalleryItem";
+import GalleryItem from "../components/ui/GalleryItem";
 import Section from "../components/Section";
 
 

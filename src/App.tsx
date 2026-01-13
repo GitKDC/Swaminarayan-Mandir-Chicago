@@ -7,8 +7,8 @@ import BooksPage from './pages/BooksPage';
 import ContactPage from './pages/ContactPage';
 import EventsPage from './pages/EventsPage';
 import GalleryPage from './pages/GalleryPage';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import DarshanPage from './pages/DarshanPage';
 import HomePage from './pages/HomePage';
 

@@ -1,11 +1,11 @@
-import DarshanCard from "@/components/DarshanCard";
+import DarshanCard from "@/components/ui/DarshanCard";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/Button";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 export default function DarshanPage() {
   return (
-    <main className="pt-20 bg-orange-200">
+    <main className="pt-20 bg-white-200">
 
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">

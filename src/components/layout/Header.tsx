@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
-import { Button } from "./ui/Button";
+import { Button } from "../ui/Button";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -33,13 +33,13 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  const textColor = scrolled ? "text-gray-900" : "text-white";
-  const subTextColor = scrolled ? "text-gray-500" : "text-white/80";
+  const textColor = scrolled ? "text-gray-900" : "text-black";
+  const subTextColor = scrolled ? "text-gray-500" : "text-black/80";
 
   return (
     <>
       {/* HEADER */}
-      <header
+    {   <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
           ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
         `}
@@ -71,7 +71,7 @@ export default function Header() {
                     ${
                       scrolled
                         ? "text-gray-700 hover:text-[#FF7A00]"
-                        : "text-white hover:text-white/80"
+                        : "text-black hover:text-white/80"
                     }
                   `}
                 >
@@ -95,7 +95,7 @@ export default function Header() {
             </button>
           </div>
         </div>
-      </header>
+      </header>}
 
       {/* MOBILE OVERLAY */}
       <div
