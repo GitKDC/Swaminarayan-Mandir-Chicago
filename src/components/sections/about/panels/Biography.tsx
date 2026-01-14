@@ -13,7 +13,7 @@ interface BiographySection {
 const biographyData: BiographySection[] = [
   {
     title: 'The Purpose Of His Avatar',
-    imageUrl: 'https://placehold.co/600x400/9d0b0b/ffffff?text=Divine+Avatar',
+    imageUrl: 'src/assets/purpose.png',
     imagePosition: 'left',
     content: [
       'Swaminarayan Bhagwan incarnated on earth, along with His dham and some of His muktas, to establish ekantik dharma, and grant kalyan to those who became His bhaktas.',
@@ -24,7 +24,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Birth Details',
     subtitle: 'The Divine Arrival',
-    imageUrl: 'src/assets/Birth.jpg',
+    imageUrl: 'src/assets/birth.png',
     imagePosition: 'right',
     content: [
       'Born on Chaitra sud 9, VS 1837 (2nd April 1781) - Ramnavmi, in the sacred land of Chhapaiya, near Ayodhya.',
@@ -42,7 +42,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Van-Vicharan',
     subtitle: 'The Sacred Journey',
-    imageUrl: 'src/assets/Birth.jpg',
+    imageUrl: 'src/assets/vanvicharan.png',
     imagePosition: 'left',
     content: [
       'At the tender age of 11 years, 3 months, and 1 day, young Nilkanth embarked on a seven-year spiritual pilgrimage across the Indian subcontinent.',
@@ -59,7 +59,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Bhagvati Diksha',
     subtitle: 'The Sacred Initiation',
-    imageUrl: 'https://placehold.co/600x400/b11226/ffffff?text=Initiation+Ceremony',
+    imageUrl: 'src/assets/bhagwatidiksha.png',
     imagePosition: 'right',
     content: [
       'On Kartik sud 11, VS 1857, at the age of 19 years, Nilkanth Varni met Ramanand Swami in Piplana and received initiation.',
@@ -76,7 +76,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Satsang',
     subtitle: 'The Divine Mission',
-    imageUrl: 'https://placehold.co/600x400/9d0b0b/ffffff?text=Satsang+Period',
+    imageUrl: 'src/assets/satsang.png',
     imagePosition: 'left',
     content: [
       'For 30 years, 9 months, and 19 days, Swaminarayan Bhagwan spread divine wisdom through satsang.',
@@ -118,7 +118,7 @@ function ParallaxSection({ section, index }: { section: BiographySection; index:
           {/* Image */}
           <motion.div
             style={{ y: imageY, scale: imageScale }}
-            className={`relative overflow-hidden rounded-2xl shadow-2xl ${isLeft ? 'md:col-start-1' : 'md:col-start-2'}`}
+            className={`relative overflow-hidden  ${isLeft ? 'md:col-start-1' : 'md:col-start-2'}`}
             data-testid={`biography-image-${index}`}
           >
             <div className="aspect-[4/3] relative">
@@ -127,7 +127,7 @@ function ParallaxSection({ section, index }: { section: BiographySection; index:
                 alt={section.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/20 to-transparent" />
+              
             </div>
           </motion.div>
 

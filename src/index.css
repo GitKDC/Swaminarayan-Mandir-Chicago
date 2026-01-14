@@ -21,7 +21,26 @@
 
   /* Borders & dividers */
   --color-border-soft: #e7cfcf;
+  --color-border-muted: #6b4b4b;
 
   /* UI */
   --color-focus-ring: #9d0b0b;
 }
+
+
+
+/* backgrounds 
+bg-brand-primary
+bg-bg-card
+bg-bg-card-alt
+*/
+
+/* text
+text-brand-primary
+text-text-secondary
+text-text-invert
+*/
+
+/* border 
+border-border-soft
+*/

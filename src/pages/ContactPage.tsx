@@ -9,13 +9,13 @@ export default function ContactPage() {
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-sm tracking-widest text-gray-500 mb-4">
+          <p className="text-sm tracking-widest text-text-secondary mb-4">
             ॥ SHREE SWAMINARAYANO VI JAYATE ॥
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-6">
+          <h1 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
             Contact Us
           </h1>
-          <p className="text-gray-700 max-w-3xl mx-auto">
+          <p className="text-text-secondary max-w-3xl mx-auto">
             We welcome devotees and visitors to connect with
             Shree Swaminarayan Mandir, Vadtal Dham Palatine.
             Please feel free to reach out or visit us.

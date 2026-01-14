@@ -14,8 +14,8 @@ export default function AboutSection() {
  
 
   return (
-    <section className="bg-bg-page py-20">
-      <div className="max-w-5xl mx-auto px-6 text-center">
+    <section className="bg-[#faf7f4] py-20">
+      <div className="max-w-5xl mx-auto mt-8 px-6 text-center">
         <p className="text-sm tracking-widest text-text-secondary mb-4">
           ॥ SHREE SWAMINARAYANO VI JAYATE ॥
         </p>
