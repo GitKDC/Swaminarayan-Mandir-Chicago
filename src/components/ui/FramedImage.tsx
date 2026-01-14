@@ -8,7 +8,7 @@ export default function FramedImage({ src, alt }: Props) {
     <div className="relative w-64 h-80 flex items-center justify-center">
       {/* Frame */}
       <img
-        src="src/assets/Frame.png"
+        src="src/assets/Frame.webp"
         alt="Decorative frame"
         className="absolute inset-0 w-full h-full object-contain pointer-events-none"
       />

@@ -1,4 +1,4 @@
-import santImage from "@/assets/sant.jpg";
+import santImage from "@/assets/sant.webp";
 import type { Sant } from "./types";
 
 export const SANTS: Sant[] = [

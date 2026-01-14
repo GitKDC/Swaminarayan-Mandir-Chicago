@@ -1,10 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import purposeImg from '@/assets/purpose.png'
-import birthImg from '@/assets/birth.png'
-import vanvicharanImg from '@/assets/vanvicharan.png'
-import bhagvatiImg from '@/assets/bhagwatidiksha.png'
-import satsangImg from '@/assets/satsang.png'
+import purposeImg from '@/assets/purpose.webp'
+import birthImg from '@/assets/birth.webp'
+import vanvicharanImg from '@/assets/vanvicharan.webp'
+import bhagvatiImg from '@/assets/bhagwatidiksha.webp'
+import satsangImg from '@/assets/satsang.webp'
 
 interface BiographySection {
   title: string;
