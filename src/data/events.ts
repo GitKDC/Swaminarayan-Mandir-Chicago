@@ -38,7 +38,7 @@ export const events: Event[] = [
     id: 3,
     title: "Youth Shibir",
     date: "January",
-    day: "20–21",
+    day: "20 - 21",
     time: "Full Day",
     venue: "Community Center",
     description:

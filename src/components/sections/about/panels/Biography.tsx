@@ -1,5 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import purposeImg from '@/assets/purpose.png'
+import birthImg from '@/assets/birth.png'
+import vanvicharanImg from '@/assets/vanvicharan.png'
+import bhagvatiImg from '@/assets/bhagwatidiksha.png'
+import satsangImg from '@/assets/satsang.png'
 
 interface BiographySection {
   title: string;
@@ -13,7 +18,7 @@ interface BiographySection {
 const biographyData: BiographySection[] = [
   {
     title: 'The Purpose Of His Avatar',
-    imageUrl: 'src/assets/purpose.png',
+    imageUrl: purposeImg,
     imagePosition: 'left',
     content: [
       'Swaminarayan Bhagwan incarnated on earth, along with His dham and some of His muktas, to establish ekantik dharma, and grant kalyan to those who became His bhaktas.',
@@ -24,7 +29,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Birth Details',
     subtitle: 'The Divine Arrival',
-    imageUrl: 'src/assets/birth.png',
+    imageUrl: birthImg,
     imagePosition: 'right',
     content: [
       'Born on Chaitra sud 9, VS 1837 (2nd April 1781) - Ramnavmi, in the sacred land of Chhapaiya, near Ayodhya.',
@@ -42,7 +47,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Van-Vicharan',
     subtitle: 'The Sacred Journey',
-    imageUrl: 'src/assets/vanvicharan.png',
+    imageUrl: vanvicharanImg,
     imagePosition: 'left',
     content: [
       'At the tender age of 11 years, 3 months, and 1 day, young Nilkanth embarked on a seven-year spiritual pilgrimage across the Indian subcontinent.',
@@ -59,7 +64,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Bhagvati Diksha',
     subtitle: 'The Sacred Initiation',
-    imageUrl: 'src/assets/bhagwatidiksha.png',
+    imageUrl: bhagvatiImg,
     imagePosition: 'right',
     content: [
       'On Kartik sud 11, VS 1857, at the age of 19 years, Nilkanth Varni met Ramanand Swami in Piplana and received initiation.',
@@ -76,7 +81,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Satsang',
     subtitle: 'The Divine Mission',
-    imageUrl: 'src/assets/satsang.png',
+    imageUrl: satsangImg,
     imagePosition: 'left',
     content: [
       'For 30 years, 9 months, and 19 days, Swaminarayan Bhagwan spread divine wisdom through satsang.',
