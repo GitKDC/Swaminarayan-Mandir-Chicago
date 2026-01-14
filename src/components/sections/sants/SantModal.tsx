@@ -12,7 +12,7 @@ export default function SantModal({ sant, onClose }: Props) {
       <div
         className="relative max-w-4xl rounded-xl p-10 bg-center bg-cover shadow-2xl"
         style={{
-          backgroundImage: "url('/src/assets/Parchment.webp')",
+          backgroundImage: "url('src/assets/Parchment.webp')",
         }}
       >
     

@@ -16,7 +16,7 @@ export default function FramedImage({ src, alt }: Props) {
       {/* Photo inside frame */}
       <div className="absolute inset-[18%] rounded-md overflow-hidden">
         <img
-          src={src}
+          src={'src/assets/sant.webp'}
           alt={alt}
           className="w-full h-full object-cover"
         />
