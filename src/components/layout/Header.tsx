@@ -71,7 +71,7 @@ export default function Header() {
                     ${
                       scrolled
                         ? "text-gray-700 hover:text-[#FF7A00]"
-                        : "text-black hover:text-white/80"
+                        : "text-black hover:text-[#FF7A00]"
                     }
                   `}
                 >

@@ -1,12 +1,61 @@
-import GalleryItem from "../components/ui/GalleryItem";
-import Section from "../components/Section";
+import { useState } from "react";
+import { Button } from "../components/ui/Button";
+import MasonryGrid from "../components/ui/AsymmetricGrid";
 
+type GalleryImage = {
+  id: number;
+  src: string;
+  category: string;
+};
 
+const categories: string[] = [
+  "All",
+  "Daily Darshan",
+  "Divine Murti Darshan",
+  "Aarti & Seva",
+  "Temple Interior",
+];
 
-export default function GalleryPage() {
+const galleryImages: GalleryImage[] = [
+  {
+    id: 1,
+    src: "src/assets/gallery/01-Position-of-the-ACHARYA-555x407.jpg",
+    category: "Daily Darshan",
+  },
+  {
+    id: 2,
+    src: "src/assets/gallery/1.5_diksha.jpg",
+    category: "Divine Murti Darshan",
+  },
+  {
+    id: 3,
+    src: "src/assets/gallery/1.6_gaadi.jpg",
+    category: "Aarti & Seva",
+  },
+  {
+    id: 4,
+    src: "src/assets/gallery/1.8_dham.jpg",
+    category: "Temple Interior",
+  },
+  {
+    id: 5,
+    src: "src/assets/gallery/2-1-555x407.jpg",
+    category: "Daily Darshan",
+  },
+];
+
+const GalleryPage: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  const filteredImages: GalleryImage[] =
+    activeCategory === "All"
+      ? galleryImages
+      : galleryImages.filter(
+          (img) => img.category === activeCategory
+        );
+
   return (
     <main className="pt-20 bg-bg-page">
-
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -23,7 +72,31 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* GALLERY SECTIONS */}
+      {/* FILTER BUTTONS */}
+      <div className="flex flex-wrap justify-center gap-3 mb-12 mt-12">
+        {categories.map((category) => (
+          <Button
+            key={category}
+            variant={activeCategory === category ? "default" : "outline"}
+            onClick={() => setActiveCategory(category)}
+          >
+            {category}
+          </Button>
+        ))}
+      </div>
+
+      {/* MASONRY GRID */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <MasonryGrid images={filteredImages} />
+      </section>
+    </main>
+  );
+};
+
+export default GalleryPage;
+
+
+{/* GALLERY SECTIONS
       <Section title="Temple & Darshan">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <GalleryItem title="Daily Darshan" />
@@ -58,8 +131,4 @@ export default function GalleryPage() {
           <GalleryItem title="Social Service" />
           <GalleryItem title="Community Gatherings" />
         </div>
-      </Section>
-
-    </main>
-  )
-}
+      </Section> */}
