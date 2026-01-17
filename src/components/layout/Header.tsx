@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { Button } from "../ui/Button";
+import { useLocation } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -17,6 +18,12 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const isHome = location.pathname === '/' || location.pathname === "";
+  console.log("PATH:", location.pathname, "isHome:", isHome);
+
+  const isTransparent = isHome && !scrolled;
 
   // Detect scroll
   useEffect(() => {
@@ -33,32 +40,54 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  const textColor = scrolled ? "text-gray-900" : "text-black";
-  const subTextColor = scrolled ? "text-gray-500" : "text-black/80";
+  const textColor = isTransparent ? "text-white" : "text-black";
+  const subTextColor = isTransparent ? "text-white" : "text-black/80";
 
   return (
     <>
       {/* HEADER */}
     {   <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-          ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
+          ${scrolled ? "bg-white shadow-md" : isHome?  "bg-transparent": "bg-white"}
         `}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="h-20 flex items-center justify-between">
 
-            {/* LOGO */}
+           {/* LOGO */}
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
-              className="flex flex-col leading-tight"
+              className="flex items-center gap-3 group"
             >
-              <span className={`text-lg font-semibold ${textColor}`}>
-                Shree Swaminarayan Mandir
-              </span>
-              <span className={`text-xs ${subTextColor}`}>
-                Palatine, Chicago
-              </span>
+              {/* ICON */}
+              <div
+                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-colors
+                  ${
+                    isTransparent
+                      ? "bg-white/10 border-white/30 group-hover:border-white"
+                      : "bg-primary/10 border-border-muted group-hover:border-primary"
+                  }
+                `}
+              >
+                <span
+                  className={`text-xl font-serif font-bold transition-colors
+                    ${isTransparent ? "text-orange-400" : "text-orange-400"}
+                  `}
+                >
+                  ॐ
+                </span>
+              </div>
+
+              {/* TEXT */}
+              <div className="flex flex-col leading-tight">
+                <span className={`text-lg font-semibold transition-colors ${textColor}`}>
+                  Shree Swaminarayan Mandir
+                </span>
+                <span className={`text-xs transition-colors ${subTextColor}`}>
+                  Palatine, Chicago
+                </span>
+              </div>
             </Link>
 
             {/* DESKTOP NAV */}
@@ -67,12 +96,16 @@ export default function Header() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors
+                  className={`relative inline-block text-sm font-medium transition-colors
                     ${
-                      scrolled
-                        ? "text-gray-700 hover:text-[#FF7A00]"
-                        : "text-black hover:text-[#FF7A00]"
+                      isTransparent
+                        ? "text-white hover:text-[#FF7A00]"
+                        : "text-gray-700 hover:text-[#FF7A00]"
                     }
+                    after:absolute after:left-0 after:-bottom-1
+                    after:h-[2px] after:w-0 after:bg-[#FF7A00]
+                    after:transition-all after:duration-300
+                    hover:after:w-full
                   `}
                 >
                   {link.name}
