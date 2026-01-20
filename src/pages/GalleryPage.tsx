@@ -57,7 +57,7 @@ const GalleryPage: React.FC = () => {
   return (
     <main className="pt-20 bg-bg-page">
       {/* HERO */}
-      <section className="bg-[#faf7f4] py-20">
+      <section className="bg-[#faf7f4] pt-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-sm tracking-widest text-text-secondary mb-4"> 
             ॥ SHREE SWAMINARAYANO VI JAYATE ॥
