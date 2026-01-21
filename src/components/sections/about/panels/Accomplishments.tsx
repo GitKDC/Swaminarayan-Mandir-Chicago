@@ -347,101 +347,167 @@ interface TimelineItem {
 
 /* ================= DATA ================= */
 
+// const accomplishmentsData: TimelineItem[] = [
+//   {
+//     id: 1,
+//     title: "Established Ekantik Dharma",
+//     description:
+//       "Established ekantik dharma and destroyed adharma, reviving the eternal principles of righteousness and devotion that had been lost for ages.",
+//     images: ["/src/assets/accomplishment/accomplishment1.png"],
+//     category: "spiritual",
+//   },
+//   {
+//     id: 2,
+//     title: "Initiated Over 2000 Sadhus",
+//     description:
+//       "Initiated over 2000 sadhus, of which 500 were initiated as paramhans. Through these sadhus, He continues to remain on earth, guiding devotees toward salvation.",
+//     images: [
+//       "https://placehold.co/400x300/b11226/ffffff?text=Sadhu+Initiation",
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Paramhans",
+//     ],
+//     category: "spiritual",
+//   },
+//   {
+//     id: 3,
+//     title: "Built Six Grand Mandirs",
+//     description:
+//       "Built mandirs in Ahmedabad, Dholera, Junagadh, Bhuj, Gadhpur, and Vadtal. Installed murtis for bhaktas to always have the darshan of Bhagvan's divine form.",
+//     images: [
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Ahmedabad+Dham",
+//       "https://placehold.co/400x300/b11226/ffffff?text=Vadtal+Dham",
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Junagadh+Dham",
+//     ],
+//     category: "architectural",
+//   },
+//   {
+//     id: 4,
+//     title: "Established Two Acharya Seats",
+//     description:
+//       "Established two seats of leadership (gadi) and appointed two acharyas to protect and promote the sampradaya for future generations.",
+//     images: ["https://placehold.co/400x300/b11226/ffffff?text=Acharya+Gadi"],
+//     category: "spiritual",
+//   },
+//   {
+//     id: 5,
+//     title: "Authored Sacred Scriptures",
+//     description:
+//       "Revealed the philosophy of the Vedas in simple words. Wrote shastras, authenticated ancient scriptures, and summarized the essence of all shastras in the Shikshapatri.",
+//     images: [
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Writing+Shastras",
+//       "https://placehold.co/400x300/b11226/ffffff?text=Shikshapatri",
+//     ],
+//     category: "literary",
+//   },
+//   {
+//     id: 6,
+//     title: "Social Reforms & Humanitarian Work",
+//     description:
+//       "Opened charity houses for the poor, organized food and water aid during droughts, stopped the practice of sati and female infanticide, and saved countless lives.",
+//     images: [
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Charity+Work",
+//       "https://placehold.co/400x300/b11226/ffffff?text=Social+Reform",
+//     ],
+//     category: "social",
+//   },
+//   {
+//     id: 7,
+//     title: "Promoted Education for All",
+//     description:
+//       "Encouraged bhaktas to educate females, enabling them to give spiritual talks. Championed equality by teaching that moksh is attainable by everyone.",
+//     images: ["https://placehold.co/400x300/9d0b0b/ffffff?text=Education+Reform"],
+//     category: "social",
+//   },
+//   {
+//     id: 8,
+//     title: "Stopped Animal Sacrifice",
+//     description:
+//       "Stopped the cruel practice of animal sacrifice in yagnas, promoting ahimsa (non-violence) and compassion toward all living beings.",
+//     images: ["https://placehold.co/400x300/b11226/ffffff?text=Ahimsa"],
+//     category: "social",
+//   },
+//   {
+//     id: 9,
+//     title: "Broke Caste Barriers",
+//     description:
+//       "Allowed members from all varnas into the Swaminarayan Sampraday. Appointed people from lower varnas as personal attendants and ate alongside them, promoting social equality.",
+//     images: ["https://placehold.co/400x300/9d0b0b/ffffff?text=Social+Equality"],
+//     category: "social",
+//   },
+//   {
+//     id: 10,
+//     title: "Built International Relations",
+//     description:
+//       "Maintained excellent relationships with the British Imperial Government, who gifted land for the Amdavad mandir. Also maintained harmony with people of all religions.",
+//     images: [
+//       "https://placehold.co/400x300/b11226/ffffff?text=British+Relations",
+//       "https://placehold.co/400x300/9d0b0b/ffffff?text=Sir+John+Malcolm",
+//     ],
+//     category: "social",
+//   },
+// ];
 const accomplishmentsData: TimelineItem[] = [
   {
     id: 1,
-    title: "Established Ekantik Dharma",
+    title: "Establishment of Ekantik Dharma & Spiritual Order",
     description:
-      "Established ekantik dharma and destroyed adharma, reviving the eternal principles of righteousness and devotion that had been lost for ages.",
-    images: ["https://placehold.co/400x300/9d0b0b/ffffff?text=Ekantik+Dharma"],
+      "Established ekantik dharma, destroyed adharma, and restored true devotion and righteousness. Revealed the philosophy of the Vedas in simple words, teaching the eternal spiritual path for all souls.",
+    images: ["/src/assets/accomplishment/accomplishment1.png"],
     category: "spiritual",
   },
   {
     id: 2,
-    title: "Initiated Over 2000 Sadhus",
+    title: "Formation of the Sadhu & Paramhans Tradition",
     description:
-      "Initiated over 2000 sadhus, of which 500 were initiated as paramhans. Through these sadhus, He continues to remain on earth, guiding devotees toward salvation.",
-    images: [
-      "https://placehold.co/400x300/b11226/ffffff?text=Sadhu+Initiation",
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Paramhans",
-    ],
+      "Initiated over 2000 sadhus, of which 500 were paramhans. Through these sadhus, Bhagwan Swaminarayan continues to guide devotees on earth, preserving spiritual wisdom and discipline.",
+    images: ["/src/assets/accomplishment/accomplishment2.png"],
     category: "spiritual",
   },
   {
     id: 3,
-    title: "Built Six Grand Mandirs",
+    title: "Mandir Construction & Murti Pratishtha",
     description:
-      "Built mandirs in Ahmedabad, Dholera, Junagadh, Bhuj, Gadhpur, and Vadtal. Installed murtis for bhaktas to always have the darshan of Bhagvan's divine form.",
-    images: [
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Ahmedabad+Dham",
-      "https://placehold.co/400x300/b11226/ffffff?text=Vadtal+Dham",
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Junagadh+Dham",
-    ],
+      "Built mandirs and installed divine murtis so that bhaktas could always have darshan of Bhagvan’s murti and remain spiritually connected.",
+    images: ["/src/assets/accomplishment/accomplishment3.png"],
     category: "architectural",
   },
   {
     id: 4,
-    title: "Established Two Acharya Seats",
+    title: "Revelation, Authentication & Composition of Shastras",
     description:
-      "Established two seats of leadership (gadi) and appointed two acharyas to protect and promote the sampradaya for future generations.",
-    images: ["https://placehold.co/400x300/b11226/ffffff?text=Acharya+Gadi"],
-    category: "spiritual",
+      "Wrote sacred shastras, authenticated ancient scriptures, validated shastras written by His sadhus, and preserved true spiritual knowledge for future generations.",
+    images: ["/src/assets/accomplishment/accomplishment6.png"],
+    category: "literary",
   },
   {
     id: 5,
-    title: "Authored Sacred Scriptures",
+    title: "Shikshapatri – Universal Code of Conduct",
     description:
-      "Revealed the philosophy of the Vedas in simple words. Wrote shastras, authenticated ancient scriptures, and summarized the essence of all shastras in the Shikshapatri.",
-    images: [
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Writing+Shastras",
-      "https://placehold.co/400x300/b11226/ffffff?text=Shikshapatri",
-    ],
+      "Summarised the essence of all shastras in the Shikshapatri, providing a universal moral, social, and spiritual code for humanity.",
+    images: ["/src/assets/accomplishment/accomplishment7.png"],
     category: "literary",
   },
   {
     id: 6,
-    title: "Social Reforms & Humanitarian Work",
+    title: "Humanitarian Service & Social Reforms",
     description:
-      "Opened charity houses for the poor, organized food and water aid during droughts, stopped the practice of sati and female infanticide, and saved countless lives.",
-    images: [
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Charity+Work",
-      "https://placehold.co/400x300/b11226/ffffff?text=Social+Reform",
-    ],
+      "Opened charity houses for the poor, organised food and water aid during droughts, and eradicated cruel practices such as sati, female infanticide, and animal sacrifice, upholding compassion, ahimsa, and the sanctity of life.",
+    images: ["/src/assets/accomplishment/accomplishment8.png"],
     category: "social",
   },
   {
     id: 7,
-    title: "Promoted Education for All",
+    title: "Equality, Education & Moksh for All",
     description:
-      "Encouraged bhaktas to educate females, enabling them to give spiritual talks. Championed equality by teaching that moksh is attainable by everyone.",
-    images: ["https://placehold.co/400x300/9d0b0b/ffffff?text=Education+Reform"],
+      "Encouraged education for women, broke caste barriers by allowing all varnas into the Sampraday, ate with lower varnas, and taught that the jeev is neither male nor female, proving that moksh is attainable by everyone.",
+    images: ["/src/assets/accomplishment/accomplishment7.png"],
     category: "social",
   },
   {
     id: 8,
-    title: "Stopped Animal Sacrifice",
+    title: "Leadership, Interfaith Harmony & Global Relations",
     description:
-      "Stopped the cruel practice of animal sacrifice in yagnas, promoting ahimsa (non-violence) and compassion toward all living beings.",
-    images: ["https://placehold.co/400x300/b11226/ffffff?text=Ahimsa"],
-    category: "social",
-  },
-  {
-    id: 9,
-    title: "Broke Caste Barriers",
-    description:
-      "Allowed members from all varnas into the Swaminarayan Sampraday. Appointed people from lower varnas as personal attendants and ate alongside them, promoting social equality.",
-    images: ["https://placehold.co/400x300/9d0b0b/ffffff?text=Social+Equality"],
-    category: "social",
-  },
-  {
-    id: 10,
-    title: "Built International Relations",
-    description:
-      "Maintained excellent relationships with the British Imperial Government, who gifted land for the Amdavad mandir. Also maintained harmony with people of all religions.",
-    images: [
-      "https://placehold.co/400x300/b11226/ffffff?text=British+Relations",
-      "https://placehold.co/400x300/9d0b0b/ffffff?text=Sir+John+Malcolm",
-    ],
+      "Established two seats of leadership (gadīs) and appointed two acharyas to protect the Sampraday. Maintained harmony with all religions, had followers from other faiths, built strong relations with the British Government who gifted land for the Amdavad mandir, and presented the Shikshapatri to Sir John Malcolm (now preserved in the Bodleian Library, Oxford).",
+    images: ["/src/assets/accomplishment/accomplishment5.png"],
     category: "social",
   },
 ];
@@ -478,44 +544,44 @@ export default function VerticalTimeline() {
                 {/* Content */}
                 <div
                   className={`grid grid-cols-1 md:grid-cols-2 items-start gap-12 w-full ${
-    isLeft ? "pr-16" : "pl-16"
-  }`}
->
-  {/* TEXT */}
-  <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
-    <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
-      {item.title}
-    </h3>
+                  isLeft ? "pr-16" : "pl-16"
+                 }`}
+                >
+                {/* TEXT */}
+                <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
+                    {item.title}
+                  </h3>
 
-    <p className="mt-3 text-gray-700 leading-relaxed text-lg">
-      {item.description}
-    </p>
-  </div>
+                  <p className="mt-3 text-gray-700 leading-relaxed text-lg">
+                    {item.description}
+                  </p>
+                </div>
 
-  {/* IMAGES */}
-  <div
-  className={
-    isLeft
-      ? "order-2 pl-8 md:pl-16"
-      : "order-1 pr-8 md:pr-16"
-  }
->
-    <div className="grid grid-cols-1 gap-8">
-      {item.images.map((img, i) => (
-        <div
-          key={i}
-          className="w-full h-[360px] md:h-[480px] rounded-xl overflow-hidden shadow-xl"
-        >
-          <img
-            src={img}
-            alt={item.title}
-            className="w-full h-full object-cover hover:scale-105 transition duration-700"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+                {/* IMAGES */}
+                <div
+                className={
+                  isLeft
+                    ? "order-2 pl-8 md:pl-16"
+                    : "order-1 pr-8 md:pr-16"
+                }
+              >
+              <div className="grid grid-cols-1 gap-8">
+                  {item.images.map((img, i) => (
+                    <div
+                      key={i}
+                      className="w-full h-auto rounded-xl overflow-overflow-visiable"
+                    >
+                      <img
+                        src={img}
+                        alt={item.title}
+                        className="w-full h-auto object-contain hover:scale-150 transition duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
               </motion.div>
             );
