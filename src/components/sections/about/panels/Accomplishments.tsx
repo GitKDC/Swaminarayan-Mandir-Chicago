@@ -335,7 +335,6 @@
 
 
 import { motion } from "framer-motion";
-
 /* ================= TYPES ================= */
 
 interface TimelineItem {
@@ -451,63 +450,78 @@ const accomplishmentsData: TimelineItem[] = [
 
 export default function VerticalTimeline() {
   return (
-    <section className="bg-bg-page py-24">
-      <div className="max-w-6xl mx-auto relative px-6">
-        {/* Center Line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-brand-muted -translate-x-1/2" />
+    <section className="bg-[#fffaf4] py-24">
+      <div className="max-w-7xl mx-auto px-6 relative">
 
-        <div className="space-y-24">
-          {accomplishmentsData.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className={`relative flex w-full ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
-              }`}
-            >
-              {/* Card */}
-              <div className="w-full md:w-5/12 bg-white rounded-2xl shadow-xl border border-brand-muted overflow-hidden">
-                <img
-                  src={item.images[0]}
-                  alt={item.title}
-                  className="w-full h-52 object-cover"
-                />
+        {/* Vertical Line */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-red-200 -translate-x-1/2" />
 
-                <div className="p-6">
-                  <h3 className="text-2xl font-serif text-brand-primary font-bold mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {item.description}
-                  </p>
+        <div className="space-y-32">
+          {accomplishmentsData.map((item, index) => {
+            const isLeft = index % 2 === 0;
+
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`relative flex ${
+                  isLeft ? "justify-start" : "justify-end"
+                }`}
+              >
+                {/* Bullet */}
+                <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                  <div className="w-6 h-6 rounded-full bg-[#9d0b0b] border-4 border-white shadow-lg" />
                 </div>
-              </div>
 
-              {/* Node */}
-              <div className="absolute left-1/2 top-10 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-secondary border-4 border-white shadow-lg" />
+                {/* Content */}
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 items-start gap-12 w-full ${
+    isLeft ? "pr-16" : "pl-16"
+  }`}
+>
+  {/* TEXT */}
+  <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
+    <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
+      {item.title}
+    </h3>
 
-              
-            </motion.div>
-          ))}
-          
+    <p className="mt-3 text-gray-700 leading-relaxed text-lg">
+      {item.description}
+    </p>
+  </div>
+
+  {/* IMAGES */}
+  <div
+  className={
+    isLeft
+      ? "order-2 pl-8 md:pl-16"
+      : "order-1 pr-8 md:pr-16"
+  }
+>
+    <div className="grid grid-cols-1 gap-8">
+      {item.images.map((img, i) => (
+        <div
+          key={i}
+          className="w-full h-[360px] md:h-[480px] rounded-xl overflow-hidden shadow-xl"
+        >
+          <img
+            src={img}
+            alt={item.title}
+            className="w-full h-full object-cover hover:scale-105 transition duration-700"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="text-center mt-16 px-6"
-      >
-        <div className="max-w-4xl mx-auto bg-brand-muted rounded-2xl p-8">
-          <p className="text-2xl font-serif text-brand-primary italic leading-relaxed">
-            "Through these divine accomplishments, Lord Swaminarayan established a legacy of compassion,
-            equality, and spiritual enlightenment that continues to inspire millions."
-          </p>
-        </div>
-      </motion.div>
     </section>
   );
 }

@@ -32,14 +32,19 @@ export default function AboutSection() {
 
       <AboutTabs active={activeTab} onChange={setActiveTab} />
 
-      <div className="mt-14 max-w-5xl mx-auto px-6">
-        {activeTab === "temple" && <AboutTemple />}
-        {activeTab === "blessings" && <Blessings />}
-        {activeTab === "sampraday" && <SectInfo />}
-        {activeTab === "biography" && <Biography />}
-        {activeTab === "accomplishments" && <Accomplishments />}
-        {activeTab === "isssv" && <ISSSV />}
-      </div>
+      <div
+  className={`mt-14 mx-auto px-6 ${
+    activeTab === "accomplishments" ? "max-w-7xl px-2" : "max-w-5xl"
+  }`}
+>
+  {activeTab === "temple" && <AboutTemple />}
+  {activeTab === "blessings" && <Blessings />}
+  {activeTab === "sampraday" && <SectInfo />}
+  {activeTab === "biography" && <Biography />}
+  {activeTab === "accomplishments" && <Accomplishments />}
+  {activeTab === "isssv" && <ISSSV />}
+</div>
+
     </section>
   );
 }
