@@ -478,44 +478,44 @@ export default function VerticalTimeline() {
                 {/* Content */}
                 <div
                   className={`grid grid-cols-1 md:grid-cols-2 items-start gap-12 w-full ${
-    isLeft ? "pr-16" : "pl-16"
-  }`}
->
-  {/* TEXT */}
-  <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
-    <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
-      {item.title}
-    </h3>
+                      isLeft ? "pr-16" : "pl-16"
+                    }`}
+                  >
+                    {/* TEXT */}
+                    <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
+                      <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
+                        {item.title}
+                      </h3>
 
-    <p className="mt-3 text-gray-700 leading-relaxed text-lg">
-      {item.description}
-    </p>
-  </div>
+                      <p className="mt-3 text-gray-700 leading-relaxed text-lg">
+                        {item.description}
+                      </p>
+                    </div>
 
-  {/* IMAGES */}
-  <div
-  className={
-    isLeft
-      ? "order-2 pl-8 md:pl-16"
-      : "order-1 pr-8 md:pr-16"
-  }
->
-    <div className="grid grid-cols-1 gap-8">
-      {item.images.map((img, i) => (
-        <div
-          key={i}
-          className="w-full h-[360px] md:h-[480px] rounded-xl overflow-hidden shadow-xl"
-        >
-          <img
-            src={img}
-            alt={item.title}
-            className="w-full h-full object-cover hover:scale-105 transition duration-700"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+                    {/* IMAGES */}
+                    <div
+                    className={
+                      isLeft
+                        ? "order-2 pl-8 md:pl-16"
+                        : "order-1 pr-8 md:pr-16"
+                    }
+                  >
+                      <div className="grid grid-cols-1 gap-8">
+                        {item.images.map((img, i) => (
+                          <div
+                            key={i}
+                            className="w-full h-[360px] md:h-[480px] rounded-xl overflow-hidden shadow-xl"
+                          >
+                            <img
+                              src={img}
+                              alt={item.title}
+                              className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
 
               </motion.div>
             );

@@ -10,7 +10,7 @@ interface BiographySection {
   title: string;
   subtitle?: string;
   content: string[];
-  imageUrl: string;
+  imageUrls: string[];
   imagePosition: 'left' | 'right';
   details?: { label: string; value: string }[];
 }
@@ -18,7 +18,7 @@ interface BiographySection {
 const biographyData: BiographySection[] = [
   {
     title: 'The Purpose Of His Avatar',
-    imageUrl: purposeImg,
+    imageUrls: [purposeImg,birthImg],
     imagePosition: 'left',
     content: [
       'Swaminarayan Bhagwan incarnated on earth, along with His dham and some of His muktas, to establish ekantik dharma, and grant kalyan to those who became His bhaktas.',
@@ -29,7 +29,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Birth Details',
     subtitle: 'The Divine Arrival',
-    imageUrl: birthImg,
+    imageUrls: [birthImg],
     imagePosition: 'right',
     content: [
       'Born on Chaitra sud 9, VS 1837 (2nd April 1781) - Ramnavmi, in the sacred land of Chhapaiya, near Ayodhya.',
@@ -47,7 +47,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Van-Vicharan',
     subtitle: 'The Sacred Journey',
-    imageUrl: vanvicharanImg,
+    imageUrls:[ vanvicharanImg],
     imagePosition: 'left',
     content: [
       'At the tender age of 11 years, 3 months, and 1 day, young Nilkanth embarked on a seven-year spiritual pilgrimage across the Indian subcontinent.',
@@ -64,7 +64,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Bhagvati Diksha',
     subtitle: 'The Sacred Initiation',
-    imageUrl: bhagvatiImg,
+    imageUrls: [bhagvatiImg,birthImg],
     imagePosition: 'right',
     content: [
       'On Kartik sud 11, VS 1857, at the age of 19 years, Nilkanth Varni met Ramanand Swami in Piplana and received initiation.',
@@ -81,7 +81,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Satsang',
     subtitle: 'The Divine Mission',
-    imageUrl: satsangImg,
+    imageUrls: [satsangImg, birthImg, birthImg],
     imagePosition: 'left',
     content: [
       'For 30 years, 9 months, and 19 days, Swaminarayan Bhagwan spread divine wisdom through satsang.',
@@ -122,19 +122,43 @@ function ParallaxSection({ section, index }: { section: BiographySection; index:
         <div className={`grid md:grid-cols-2 gap-12 items-center ${isLeft ? '' : 'md:grid-flow-dense'}`}>
           {/* Image */}
           <motion.div
-            style={{ y: imageY, scale: imageScale }}
-            className={`relative overflow-hidden  ${isLeft ? 'md:col-start-1' : 'md:col-start-2'}`}
-            data-testid={`biography-image-${index}`}
-          >
-            <div className="aspect-[4/3] relative">
-              <img
-                src={section.imageUrl}
-                alt={section.title}
-                className="w-full h-full object-cover"
-              />
-              
-            </div>
-          </motion.div>
+              style={{ y: imageY, scale: imageScale }}
+              className={`relative ${isLeft ? 'md:col-start-1' : 'md:col-start-2'} overflow-visible`}
+              data-testid={`biography-image-${index}`}
+            >
+              <div
+                className={`flex flex-col gap-4 h-full justify-center`}
+              >
+               {section.imageUrls.map((img, imgIndex) => (
+                  <div
+                    key={imgIndex}
+                    className={`
+                      relative overflow-visible rounded-xl z-10
+                      transition-all duration-300
+                      ${
+                        section.imageUrls.length === 1
+                          ? 'h-[420px]'
+                          : section.imageUrls.length === 2
+                          ? 'h-[200px]'
+                          : 'h-[200px]'
+                      }
+                      group hover:z-20
+                    `}
+                  >
+                    <img
+                      src={img}
+                      alt={`${section.title} ${imgIndex + 1}`}
+                      className="
+                        w-full h-full object-contain
+                        transition-transform duration-500 ease-out
+                        group-hover:scale-[1.27]
+                      "
+                    />
+                  </div>
+                ))}
+
+              </div>
+            </motion.div>
 
           {/* Content */}
           <motion.div
