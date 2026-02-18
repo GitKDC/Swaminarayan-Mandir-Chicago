@@ -1,6 +1,5 @@
-import Section from "../components/Section";
-import { Button } from "../components/ui/Button";
-import React,{useState} from "react";
+
+import {useState} from "react";
 import { ExternalLink } from "lucide-react";
 import { Heart, BookOpen, Star, Book } from "lucide-react";
 type Category =
