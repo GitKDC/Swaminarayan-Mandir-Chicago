@@ -1,4 +1,5 @@
 import FramedImage from "@/components/ui/FramedImage";
+import parchment from "@/assets/Parchment.webp";
 import type { Sant } from "./types";
 
 interface Props {
@@ -12,7 +13,7 @@ export default function SantModal({ sant, onClose }: Props) {
       <div
         className="relative max-w-4xl rounded-xl p-10 bg-center bg-cover shadow-2xl"
         style={{
-          backgroundImage: "url('src/assets/Parchment.webp')",
+          backgroundImage: `url(${parchment})`,
         }}
       >
     

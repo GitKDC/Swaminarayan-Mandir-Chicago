@@ -335,6 +335,13 @@
 
 
 import { motion } from "framer-motion";
+import image1 from "@/assets/accomplishment/accomplishment1.png";
+import accomplishment2 from "@/assets/accomplishment/accomplishment2.png";
+import accomplishment3 from "@/assets/accomplishment/accomplishment3.png";
+import accomplishment5 from "@/assets/accomplishment/accomplishment5.png";
+import accomplishment6 from "@/assets/accomplishment/accomplishment6.png";
+import accomplishment7 from "@/assets/accomplishment/accomplishment7.png";
+import accomplishment8 from "@/assets/accomplishment/accomplishment8.png";
 /* ================= TYPES ================= */
 
 interface TimelineItem {
@@ -451,7 +458,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Establishment of Ekantik Dharma & Spiritual Order",
     description:
       "Established ekantik dharma, destroyed adharma, and restored true devotion and righteousness. Revealed the philosophy of the Vedas in simple words, teaching the eternal spiritual path for all souls.",
-    images: ["/src/assets/accomplishment/accomplishment1.png"],
+    images: [image1],
     category: "spiritual",
   },
   {
@@ -459,7 +466,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Formation of the Sadhu & Paramhans Tradition",
     description:
       "Initiated over 2000 sadhus, of which 500 were paramhans. Through these sadhus, Bhagwan Swaminarayan continues to guide devotees on earth, preserving spiritual wisdom and discipline.",
-    images: ["/src/assets/accomplishment/accomplishment2.png"],
+    images: [accomplishment2],
     category: "spiritual",
   },
   {
@@ -467,7 +474,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Mandir Construction & Murti Pratishtha",
     description:
       "Built mandirs and installed divine murtis so that bhaktas could always have darshan of Bhagvan’s murti and remain spiritually connected.",
-    images: ["/src/assets/accomplishment/accomplishment3.png"],
+    images: [accomplishment3],
     category: "architectural",
   },
   {
@@ -475,7 +482,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Revelation, Authentication & Composition of Shastras",
     description:
       "Wrote sacred shastras, authenticated ancient scriptures, validated shastras written by His sadhus, and preserved true spiritual knowledge for future generations.",
-    images: ["/src/assets/accomplishment/accomplishment6.png"],
+    images: [accomplishment6],
     category: "literary",
   },
   {
@@ -483,7 +490,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Shikshapatri – Universal Code of Conduct",
     description:
       "Summarised the essence of all shastras in the Shikshapatri, providing a universal moral, social, and spiritual code for humanity.",
-    images: ["/src/assets/accomplishment/accomplishment7.png"],
+    images: [accomplishment7],
     category: "literary",
   },
   {
@@ -491,7 +498,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Humanitarian Service & Social Reforms",
     description:
       "Opened charity houses for the poor, organised food and water aid during droughts, and eradicated cruel practices such as sati, female infanticide, and animal sacrifice, upholding compassion, ahimsa, and the sanctity of life.",
-    images: ["/src/assets/accomplishment/accomplishment8.png"],
+    images: [accomplishment8],
     category: "social",
   },
   {
@@ -499,7 +506,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Equality, Education & Moksh for All",
     description:
       "Encouraged education for women, broke caste barriers by allowing all varnas into the Sampraday, ate with lower varnas, and taught that the jeev is neither male nor female, proving that moksh is attainable by everyone.",
-    images: ["/src/assets/accomplishment/accomplishment7.png"],
+    images: [accomplishment7],
     category: "social",
   },
   {
@@ -507,7 +514,7 @@ const accomplishmentsData: TimelineItem[] = [
     title: "Leadership, Interfaith Harmony & Global Relations",
     description:
       "Established two seats of leadership (gadīs) and appointed two acharyas to protect the Sampraday. Maintained harmony with all religions, had followers from other faiths, built strong relations with the British Government who gifted land for the Amdavad mandir, and presented the Shikshapatri to Sir John Malcolm (now preserved in the Bodleian Library, Oxford).",
-    images: ["/src/assets/accomplishment/accomplishment5.png"],
+    images: [accomplishment5],
     category: "social",
   },
 ];
