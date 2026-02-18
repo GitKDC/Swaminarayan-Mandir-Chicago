@@ -524,77 +524,125 @@ const accomplishmentsData: TimelineItem[] = [
 export default function VerticalTimeline() {
   return (
     <section className="bg-[#fffaf4] py-24">
-      <div className="max-w-7xl mx-auto px-6 relative">
+      
+      {/* ========== DESKTOP TIMELINE (md and above) ========== */}
+      <div className="hidden md:block">
+        <div className="max-w-7xl mx-auto px-6 relative">
 
-        {/* Vertical Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-red-200 -translate-x-1/2" />
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-red-200 -translate-x-1/2" />
 
-        <div className="space-y-32">
-          {accomplishmentsData.map((item, index) => {
-            const isLeft = index % 2 === 0;
+          <div className="space-y-32">
+            {accomplishmentsData.map((item, index) => {
+              const isLeft = index % 2 === 0;
 
-            return (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={`relative flex ${
-                  isLeft ? "justify-start" : "justify-end"
-                }`}
-              >
-                {/* Bullet */}
-                <div className="absolute left-1/2 -translate-x-1/2 z-10">
-                  <div className="w-6 h-6 rounded-full bg-[#9d0b0b] border-4 border-white shadow-lg" />
-                </div>
-
-                {/* Content */}
-                <div
-                  className={`grid grid-cols-1 md:grid-cols-2 items-start gap-12 w-full ${
-                  isLeft ? "pr-16" : "pl-16"
-                 }`}
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className={`relative flex ${
+                    isLeft ? "justify-start" : "justify-end"
+                  }`}
                 >
-                {/* TEXT */}
-                <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
-                    {item.title}
-                  </h3>
+                  {/* Bullet */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                    <div className="w-6 h-6 rounded-full bg-[#9d0b0b] border-4 border-white shadow-lg" />
+                  </div>
 
-                  <p className="mt-3 text-gray-700 leading-relaxed text-lg">
-                    {item.description}
-                  </p>
+                  {/* Content */}
+                  <div
+                    className={`grid grid-cols-1 md:grid-cols-2 items-start gap-12 w-full ${
+                    isLeft ? "pr-16" : "pl-16"
+                   }`}
+                  >
+                  {/* TEXT */}
+                  <div className={isLeft ? "text-right order-1" : "text-left order-2"}>
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#9d0b0b]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-gray-700 leading-relaxed text-lg">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* IMAGES */}
+                  <div
+                  className={
+                    isLeft
+                      ? "order-2 pl-8 md:pl-16"
+                      : "order-1 pr-8 md:pr-16"
+                  }
+                >
+                <div className="grid grid-cols-1 gap-8">
+                    {item.images.map((img, i) => (
+                      <div
+                        key={i}
+                        className="w-full h-auto rounded-xl overflow-overflow-visiable"
+                      >
+                        <img
+                          src={img}
+                          alt={item.title}
+                          className="w-full h-auto object-contain hover:scale-150 transition duration-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </div>
 
-                {/* IMAGES */}
-                <div
-                className={
-                  isLeft
-                    ? "order-2 pl-8 md:pl-16"
-                    : "order-1 pr-8 md:pr-16"
-                }
-              >
-              <div className="grid grid-cols-1 gap-8">
-                  {item.images.map((img, i) => (
-                    <div
-                      key={i}
-                      className="w-full h-auto rounded-xl overflow-overflow-visiable"
-                    >
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ========== MOBILE LAYOUT (below md) ========== */}
+      <div className="block md:hidden px-4 py-12">
+        <div className="max-w-lg mx-auto space-y-6">
+          {accomplishmentsData.map((item) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              {/* Images Section - Centered */}
+              <div className="flex flex-col gap-3 p-4 bg-gray-50">
+                {item.images.map((img, i) => (
+                  <div 
+                    key={i} 
+                    className="flex justify-center w-full"
+                  >
+                    <div className="w-full max-w-xs h-48 bg-gray-200 rounded-lg overflow-hidden">
                       <img
                         src={img}
                         alt={item.title}
-                        className="w-full h-auto object-contain hover:scale-150 transition duration-500"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            </div>
 
-              </motion.div>
-            );
-          })}
+              {/* Content Section */}
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-[#9d0b0b] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
     </section>
   );
 }
