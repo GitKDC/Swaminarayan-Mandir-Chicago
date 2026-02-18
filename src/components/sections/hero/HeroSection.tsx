@@ -56,7 +56,7 @@ export default function HeroCarousel() {
       style={{ backgroundImage: `url(${images[current]})` }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-black/70 via-black/50 to-transparent"></div>
 
       {/* Decorative animated leaf */}
       <motion.div 

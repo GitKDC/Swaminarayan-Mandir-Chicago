@@ -527,7 +527,7 @@ export default function VerticalTimeline() {
       <div className="max-w-7xl mx-auto px-6 relative">
 
         {/* Vertical Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-red-200 -translate-x-1/2" />
+        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-red-200 -translate-x-1/2" />
 
         <div className="space-y-32">
           {accomplishmentsData.map((item, index) => {

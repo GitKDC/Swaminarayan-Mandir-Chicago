@@ -100,7 +100,7 @@ export default function ContactPage() {
     </form>
 
     {/* GOOGLE MAP */}
-    <div className="w-full h-[350px] md:h-[420px] rounded-2xl overflow-hidden shadow-lg">
+    <div className="w-full h-87.5 md:h-105 rounded-2xl overflow-hidden shadow-lg">
       <iframe
         title="Shree Swaminarayan Mandir Palatine Map"
         src="https://www.google.com/maps?q=Shree+Swaminarayan+Mandir+Palatine+Chicago&output=embed"

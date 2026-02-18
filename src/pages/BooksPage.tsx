@@ -236,7 +236,7 @@ export default function BooksPage() {
             className="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden"
           >
             {/* Top Image Area */}
-            <div className="relative h-48 bg-gradient-to-br from-orange-50 to-yellow-50 flex items-center justify-center">
+            <div className="relative h-48 bg-linear-to-br from-orange-50 to-yellow-50 flex items-center justify-center">
               <span className="absolute top-4 right-4 text-xs bg-orange-400 text-white px-3 py-1 rounded-full">
                 {book.tag}
               </span>
@@ -407,7 +407,7 @@ export default function BooksPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-b from-[#fff3df] to-[#fffaf3] py-24 px-6">
+      <section className="bg-linear-to-b from-[#fff3df] to-[#fffaf3] py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-serif font-bold text-[#4b2f1f]">
             Begin Your Spiritual Journey

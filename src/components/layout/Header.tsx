@@ -46,7 +46,7 @@ export default function Header() {
     <>
       {/* HEADER */}
       <header
-        className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300
+        className={`fixed top-0 left-0 w-full z-60 transition-all duration-300
           ${scrolled ? "bg-white shadow-md" : isHome ? "bg-transparent" : "bg-white"}
         `}
       >
@@ -100,7 +100,7 @@ export default function Header() {
                         : "text-gray-700 hover:text-[#FF7A00]"
                     }
                     after:absolute after:left-0 after:-bottom-1
-                    after:h-[2px] after:w-0 after:bg-[#FF7A00]
+                    after:h-0.5 after:w-0 after:bg-[#FF7A00]
                     after:transition-all after:duration-300
                     hover:after:w-full
                   `}
