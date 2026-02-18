@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Button } from "../components/ui/Button";
 import MasonryGrid from "../components/ui/AsymmetricGrid";
 
+import g1 from "@/assets/gallery/01-Position-of-the-ACHARYA-555x407.jpg";
+import g2 from "@/assets/gallery/1.5_diksha.jpg";
+import g3 from "@/assets/gallery/1.6_gaadi.jpg";
+import g4 from "@/assets/gallery/1.8_dham.jpg";
+import g5 from "@/assets/gallery/2-1-555x407.jpg";
+
 type GalleryImage = {
   id: number;
   src: string;
@@ -17,31 +23,11 @@ const categories: string[] = [
 ];
 
 const galleryImages: GalleryImage[] = [
-  {
-    id: 1,
-    src: "src/assets/gallery/01-Position-of-the-ACHARYA-555x407.jpg",
-    category: "Daily Darshan",
-  },
-  {
-    id: 2,
-    src: "src/assets/gallery/1.5_diksha.jpg",
-    category: "Divine Murti Darshan",
-  },
-  {
-    id: 3,
-    src: "src/assets/gallery/1.6_gaadi.jpg",
-    category: "Aarti & Seva",
-  },
-  {
-    id: 4,
-    src: "src/assets/gallery/1.8_dham.jpg",
-    category: "Temple Interior",
-  },
-  {
-    id: 5,
-    src: "src/assets/gallery/2-1-555x407.jpg",
-    category: "Daily Darshan",
-  },
+  { id: 1, src: g1, category: "Daily Darshan" },
+  { id: 2, src: g2, category: "Divine Murti Darshan" },
+  { id: 3, src: g3, category: "Aarti & Seva" },
+  { id: 4, src: g4, category: "Temple Interior" },
+  { id: 5, src: g5, category: "Daily Darshan" },
 ];
 
 const GalleryPage: React.FC = () => {
