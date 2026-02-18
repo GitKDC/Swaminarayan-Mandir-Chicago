@@ -24,6 +24,45 @@ export default function DarshanPage() {
         </div>
       </section>
 
+      {/* LIVE DARSHAN */}
+      <Section
+        title ="Live Darshan & Aarti"
+        
+      >
+        <div className="flex flex-col gap-12 items-center">
+
+          {/* YOUTUBE LIVE */}
+          <div className="w-full max-w-7xl">
+            <YouTubeEmbed
+              videoId="LIVE_VIDEO_ID_HERE"
+              title="Vadtal Dham Palatine Live Darshan"
+              live
+            />
+          </div>
+
+          {/* TEXT */}
+          <div className="w-full max-w-4xl mr-auto text-left ">
+            <p className="text-gray-700 leading-relaxed mb-6 mr-auto">
+              Connecting devotees across the world
+              <br/><br/>
+              For devotees who are unable to visit the temple in person,
+              daily live darshan and aarti are streamed through our
+              official YouTube channel.
+              <br /><br />
+              Through live broadcasts of darshan, aarti, and katha,
+              devotees across the globe are able to remain connected
+              with the divine presence of Vadtal Dham.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Button>Watch Live Darshan</Button>
+              <Button variant="outline">YouTube Channel</Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+
       {/* DAILY DARSHAN */}
       <Section
         title="Divine Daily Darshan"
@@ -57,40 +96,6 @@ export default function DarshanPage() {
           <DarshanCard
             title="Peace & Blessings"
             description="Darshan provides inner peace, spiritual strength, and divine blessings to devotees from all walks of life."
-          />
-        </div>
-      </Section>
-
-      {/* LIVE DARSHAN */}
-      <Section
-        title="Live Darshan & Aarti"
-        subtitle="Connecting devotees across the world"
-      >
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-
-          {/* TEXT */}
-          <div>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              For devotees who are unable to visit the temple in person,
-              daily live darshan and aarti are streamed through our
-              official YouTube channel.
-              <br /><br />
-              Through live broadcasts of darshan, aarti, and katha,
-              devotees across the globe are able to remain connected
-              with the divine presence of Vadtal Dham.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Button>Watch Live Darshan</Button>
-              <Button variant="outline">YouTube Channel</Button>
-            </div>
-          </div>
-
-          {/* YOUTUBE LIVE */}
-          <YouTubeEmbed
-            videoId="LIVE_VIDEO_ID_HERE"
-            title="Vadtal Dham Palatine Live Darshan"
-            live
           />
         </div>
       </Section>

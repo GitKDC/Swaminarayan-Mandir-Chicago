@@ -9,7 +9,7 @@ type SectionProps = {
       <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           {title && (
-            <h2 className="text-4xl md:text-5xl font-serif text-orange-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-serif text-orange-800 mb-4 ">
               {title}
             </h2>
           )}
