@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
-import AboutPage from './pages/AboutPage';
 import BooksPage from './pages/BooksPage';
 import ContactPage from './pages/ContactPage';
 import EventsPage from './pages/EventsPage';
@@ -19,12 +18,13 @@ function App() {
 
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<AboutPage />} />
+          {/* <Route path='/about' element={<AboutPage />} /> */}
           <Route path='/books' element={<BooksPage />} />
           <Route path='/darshan' element={<DarshanPage />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/events' element={<EventsPage />} />
           <Route path='/gallery' element={<GalleryPage/>} />
+          
         </Routes>
 
         <Footer />

@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import { Button } from "../ui/Button";
+import DonationModal from "../sections/donation/DonationModel";
 
 export default function Footer() {
+    const [donationOpen, setDonationOpen] = useState(false);
+  
   return (
     <footer className="bg-[#1c1c1c] text-gray-300">
       {/* TOP */}
@@ -73,9 +77,9 @@ export default function Footer() {
             </p>
 
             <div className="mt-5">
-              <Button size="sm">
-                Today&apos;s Darshan
-              </Button>
+              <Button size="sm" onClick={() => setDonationOpen(true)}>
+                 Donation
+            </Button>
             </div>
           </div>
 
@@ -93,6 +97,15 @@ export default function Footer() {
           </p>
         </div>
       </div>
+       <DonationModal
+              open={donationOpen}
+              onClose={() => setDonationOpen(false)}
+              onSubmit={(data) => {
+                console.log("Donation Data:", data);
+              }}
+            />
     </footer>
+
+    
   );
 }

@@ -1,7 +1,6 @@
 import Section from '@/components/Section'
 import { Button } from '@/components/ui/Button'
 
-
 export default function ContactPage() {
   return (
     <main className="pt-20 bg-bg-page">
@@ -24,10 +23,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT DETAILS */}
-      <Section
-        title="Temple Information"
-        subtitle="Visit us or get in touch"
-      >
+      <Section title="Temple Information" subtitle="Visit us or get in touch">
         <div className="grid md:grid-cols-2 gap-10">
 
           {/* ADDRESS */}
@@ -36,7 +32,7 @@ export default function ContactPage() {
               Temple Address
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Shree Swaminarayan Mandir<br />
+              ॐ Shree Swaminarayan Mandir<br />
               Vadtal Dham, Palatine<br />
               1521 N Rand Road<br />
               Palatine, IL – 60074
@@ -69,43 +65,54 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* CONTACT FORM */}
-      <Section
-        title="Send Us a Message"
-        subtitle="We would love to hear from you"
-      >
-        <form className="max-w-3xl space-y-6">
+      {/* MAP + CONTACT FORM (SIDE BY SIDE) */}
+<Section title="Get in Touch" subtitle="Find us on map or send a message">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-            />
-          </div>
+    {/* CONTACT FORM */}
+    <form className="space-y-6">
+      <div className="grid md:grid-cols-2 gap-6">
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+        />
+      </div>
 
-          <input
-            type="text"
-            placeholder="Subject"
-            className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-          />
+      <input
+        type="text"
+        placeholder="Subject"
+        className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+      />
 
-          <textarea
-            rows={5}
-            placeholder="Your Message"
-            className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-          />
+      <textarea
+        rows={5}
+        placeholder="Your Message"
+        className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+      />
 
-          <Button>
-            Send Message
-          </Button>
-        </form>
-      </Section>
+      <Button>Send Message</Button>
+    </form>
+
+    {/* GOOGLE MAP */}
+    <div className="w-full h-87.5 md:h-105 rounded-2xl overflow-hidden shadow-lg">
+      <iframe
+        title="Shree Swaminarayan Mandir Palatine Map"
+        src="https://www.google.com/maps?q=Shree+Swaminarayan+Mandir+Palatine+Chicago&output=embed"
+        className="w-full h-full border-0"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+
+  </div>
+</Section>
+
 
       {/* CTA */}
       <section className="py-20 bg-[#faf7f4]">
