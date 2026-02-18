@@ -7,7 +7,7 @@ export default function EventSection() {
   const nonFeatured = events.filter(e => !e.featured)
 
   return (
-    <main className="pt-20 bg-[#faf7f4]">
+    <main className="pt-15 bg-[#faf7f4]">
 
       {/* HERO */}
       <section className="py-20">

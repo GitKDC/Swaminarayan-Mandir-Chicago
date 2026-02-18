@@ -11,37 +11,54 @@ export default function EventsCarousel() {
           {featured.map(event => (
             <div
               key={event.id}
-              className="min-w-full snap-start relative rounded-3xl overflow-hidden shadow-lg"
+              className="group min-w-full snap-start relative rounded-3xl overflow-hidden shadow-lg"
             >
               <img
                 src={event.image}
                 alt={event.title}
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[560px] object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              
+              
+  {/* Mobile shadow overlay */}
+  <div className="absolute inset-0 bg-black/50 md:hidden" />
+
+              {/* overlay (hidden until hover) */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-gradient-to-r from-black/70 via-black/40 to-transparent
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-300
+                "
               />
 
-              {/* overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+              {/* content (hidden until hover) */}
+             <div className="absolute inset-0 flex items-center">
+  <div
+    className="
+      p-10 max-w-xl text-white
+      opacity-100 md:opacity-0
+      md:group-hover:opacity-100
+      translate-y-0 md:translate-y-6
+      md:group-hover:translate-y-0
+      transition-all duration-300
+      
+    "
+  >
+    <span className="inline-block mb-4 px-4 py-1 rounded-full bg-brand-muted text-sm text-brand-primary">
+      Featured Events
+    </span>
 
-              {/* content */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="p-10 max-w-xl text-white">
-                  <span className="inline-block mb-4 px-4 py-1 rounded-full bg-brand-muted text-sm text-brand-primary">
-                    Featured Events
-                  </span>
+    <h2 className="font-serif text-4xl mb-4">{event.title}</h2>
+    <p className="text-white/80 mb-6">{event.description}</p>
 
-                  <h2 className="font-serif text-4xl mb-4">
-                    {event.title}
-                  </h2>
+    <Button className="bg-brand-secondary hover:bg-orange-600">
+      Learn More
+    </Button>
+  </div>
+</div>
 
-                  <p className="text-white/80 mb-6">
-                    {event.description}
-                  </p>
-
-                  <Button className="bg-brand-secondary hover:bg-orange-600">
-                    Learn More
-                  </Button>
-                </div>
-              </div>
             </div>
           ))}
         </div>
