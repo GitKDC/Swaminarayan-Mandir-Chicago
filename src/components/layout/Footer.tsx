@@ -92,6 +92,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Shree Swaminarayan Mandir, Vadtal Dham Palatine
           </p>
+          <Link to="https://www.stsarc.com/">Design and Developed by STSARC </Link>
           <p className="tracking-widest text-xs">
             ॥ SHREE SWAMINARAYANO VI JAYATE ॥
           </p>
