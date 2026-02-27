@@ -8,7 +8,7 @@ import SectInfo from "./panels/SectInfo";
 import Biography from "./panels/Biography";
 import Accomplishments from "./panels/Accomplishments";
 import ISSSV from "./panels/ISSSV";
-
+import AcharyaParampara from "./panels/AcharyaParampara";
 export default function AboutSection() {
   const [activeTab, setActiveTab] = useState<AboutTab>("temple");
  
@@ -43,6 +43,8 @@ export default function AboutSection() {
   {activeTab === "biography" && <Biography />}
   {activeTab === "accomplishments" && <Accomplishments />}
   {activeTab === "isssv" && <ISSSV />}
+  {activeTab === "acharyaParampara" && <AcharyaParampara/>}
+
 </div>
 
     </section>
