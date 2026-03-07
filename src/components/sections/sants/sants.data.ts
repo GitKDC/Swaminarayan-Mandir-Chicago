@@ -1,12 +1,15 @@
-import santImage from "@/assets/sant.webp";
 import type { Sant } from "./types";
-
+import rakeshmaharaj from "../../../assets/Rakeshprasadji Maharaj.jpg"
+import guruvarya from "../../../assets/GURUVARYA SADGURU SHA.jpeg"
+import bhaktiprakashji from "../../../assets/Bhaktiprakash sastree (3).jpg.jpeg"
+import guru from "../../../assets/SHASTRI SHRI DHARMPRAKASHDAS.jpeg"
+import muktprakashdas from "../../../assets/muktprakshdasji .JPG.jpeg"
 export const SANTS: Sant[] = [
   {
     id: 1,
-    name: "Maharaj Shree",
+    name: "Shri Rakeshprasadji Maharajishri",
     role: "Spiritual Head",
-    image: santImage,
+    image: rakeshmaharaj,
     description:
       "Guiding devotees on the path of dharma and devotion for over three decades.",
     biography: [
@@ -17,9 +20,9 @@ export const SANTS: Sant[] = [
   },
   {
     id: 2,
-    name: "Guru Dharmaprasaddasji",
+    name: "Guru Dharmaprasaddasji Swami",
     role: "Resident Sant",
-    image: santImage,
+    image: guruvarya,
     description:
       "Dedicated to teaching scriptures and conducting daily spiritual discourses.",
   },
@@ -27,16 +30,24 @@ export const SANTS: Sant[] = [
     id: 3,
     name: "Guru Bhaktiprakashdasji",
     role: "Spiritual Lead",
-    image: santImage,
+    image: bhaktiprakashji,
     description:
       "Dedicated to teaching scriptures and conducting daily spiritual discourses.",
   },
-//   {
-//     id: 4,
-//     name: "Guru Muktaprakashdasji",
-//     role: "Resident Sant",
-//     image: santImage,
-//     description:
-//       "Dedicated to teaching scriptures and conducting daily spiritual discourses.",
-//   },
+  {
+    id: 4,
+    name: "Shastri Shri DharmPrakashdas",
+    role: "Resident Sant",
+    image: guru,
+    description:
+      "Dedicated to teaching scriptures and conducting daily spiritual discourses.",
+  },
+{
+  id: 5,
+  name: "Shastri Shri Muktprakashdas",
+  role: "Resident Sant",
+  image: muktprakashdas,
+  description:
+    "Dedicated to teaching scriptures and conducting daily spiritual discourses.",
+}
 ];
