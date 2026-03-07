@@ -1,11 +1,31 @@
+import Raghuvirji from "@/assets/Raghuvirji Maharaj.jpg";
+import Bhagvatprasadji from "@/assets/Bhagvatprasadji Maharaj.jpg";
+import Viharilalji from "@/assets/Viharilalji Maharaj.jpg";
+import Laxmiprasadji from "@/assets/Laxmiprasadji Maharaj.jpg";
+import Shripatiprasadji from "@/assets/Shripatiprasadji Maharaj.jpg";
+import Anandprasadji from "@/assets/Anandprasadji Maharaj.jpg";
+import Narendraprasadji from "@/assets/Narendraprasadji Maharaj.jpg";
+import Ajendraprasadji from "@/assets/Ajendraprasadji Maharaj.jpg";
+import Rakeshprasadji from "@/assets/Rakeshprasadji Maharaj.jpg";
+
 export default function AcharyaParampara() {
-  const acharyas = [
+  type Acharya = {
+    name: string;
+    born: string;
+    became: string;
+    death: string;
+    term: string;
+    image: string;
+  };
+
+  const acharyas: Acharya[] = [
     {
       name: "Acharya Shree Raghuvirji Maharaj",
       born: "21st Mar 1812",
       became: "10th Nov 1826",
       death: "9th Feb 1863",
       term: "37 Years",
+      image: Raghuvirji,
     },
     {
       name: "Acharya Shree Bhagvatprasadji Maharaj",
@@ -13,6 +33,7 @@ export default function AcharyaParampara() {
       became: "09th Feb 1863",
       death: "12th Aug 1879",
       term: "17 Years",
+      image: Bhagvatprasadji,
     },
     {
       name: "Acharya Shree Viharilalji Maharaj",
@@ -20,6 +41,7 @@ export default function AcharyaParampara() {
       became: "12th Aug 1879",
       death: "27th Sep 1899",
       term: "20 Years",
+      image: Viharilalji,
     },
     {
       name: "Acharya Shree Laxmiprasadji Maharaj",
@@ -27,6 +49,7 @@ export default function AcharyaParampara() {
       became: "27th Sep 1899",
       death: "24th Apr 1909",
       term: "10 Years",
+      image: Laxmiprasadji,
     },
     {
       name: "Acharya Shree Shripatiprasadji Maharaj",
@@ -34,6 +57,7 @@ export default function AcharyaParampara() {
       became: "26th Apr 1909",
       death: "12th Feb 1931",
       term: "22 Years",
+      image: Shripatiprasadji,
     },
     {
       name: "Acharya Shree Anandprasadji Maharaj",
@@ -41,6 +65,7 @@ export default function AcharyaParampara() {
       became: "12th Feb 1931",
       death: "08th Jul 1974",
       term: "28 Years",
+      image: Anandprasadji,
     },
     {
       name: "Acharya Shree Narendraprasadji Maharaj",
@@ -48,6 +73,7 @@ export default function AcharyaParampara() {
       became: "30th Apr 1959",
       death: "1986",
       term: "25 Years",
+      image: Narendraprasadji,
     },
     {
       name: "Acharya Shree Ajendraprasadji Maharaj",
@@ -55,6 +81,7 @@ export default function AcharyaParampara() {
       became: "1984",
       death: "Present",
       term: "18 Years",
+      image: Ajendraprasadji,
     },
     {
       name: "Acharya Shree Rakeshprasadji Maharaj",
@@ -62,6 +89,7 @@ export default function AcharyaParampara() {
       became: "31st Jan 2003",
       death: "Present",
       term: "Present",
+      image: Rakeshprasadji,
     },
   ];
 
@@ -100,20 +128,39 @@ export default function AcharyaParampara() {
         {acharyas.map((a) => (
           <div
             key={a.name}
-            className="bg-white rounded-xl p-6 shadow-sm border border-orange-100"
+            className="bg-white rounded-xl p-6 shadow-sm border border-orange-100 flex flex-col md:flex-row"
           >
-            <h5 className="text-lg font-semibold text-red-700 mb-3">
-              {a.name}
-            </h5>
-            <p className="text-sm text-gray-700 space-y-1">
-              <span className="block"><strong>Born:</strong> {a.born}</span>
-              <span className="block"><strong>Became Acharya:</strong> {a.became}</span>
-              <span className="block"><strong>Death:</strong> {a.death}</span>
-              <span className="block"><strong>Term:</strong> {a.term}</span>
-            </p>
+            {/* text section */}
+            <div className="flex-1">
+              <h5 className="text-lg font-semibold text-red-700 mb-3">
+                {a.name}
+              </h5>
+              <p className="text-sm text-gray-700 space-y-1">
+                <span className="block"><strong>Born:</strong> {a.born}</span>
+                <span className="block"><strong>Became Acharya:</strong> {a.became}</span>
+                <span className="block"><strong>Death:</strong> {a.death}</span>
+                <span className="block"><strong>Term:</strong> {a.term}</span>
+              </p>
+            </div>
+
+            {/* image section */}
+            <div className="mt-4 md:mt-0 md:ml-6 md:w-40 flex-shrink-0">
+              <img
+                src={a.image}
+                alt={a.name}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
+
+
+
+
+
+
