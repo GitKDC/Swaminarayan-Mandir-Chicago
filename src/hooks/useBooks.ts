@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { api } from "@/api/api";
 
 export interface Book {
-  _id: string;
+  id: string;
   title: string;
   hindiTitle: string;
   description: string;

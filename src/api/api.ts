@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:4000/api",
-  withCredentials: false, // true only if you use cookies/sessions
+  baseURL: import.meta.env.VITE_FRONTEND,
+  withCredentials: false,
   headers: {
     "Content-Type": "application/json",
   },

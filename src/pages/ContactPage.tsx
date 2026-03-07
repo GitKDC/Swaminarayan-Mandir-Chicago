@@ -1,7 +1,51 @@
-import Section from '@/components/Section'
-import { Button } from '@/components/ui/Button'
+import { useState } from "react"
+import Section from "@/components/Section"
+import { Button } from "@/components/ui/Button"
+import { api } from "@/api/api"
 
 export default function ContactPage() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    try {
+      setLoading(true)
+
+      const res = await api.post("/contact", formData)
+
+      alert(res.data.message || "Message sent successfully")
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      })
+
+    } catch (error) {
+      console.error(error)
+      alert("Failed to send message")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <main className="pt-20 bg-bg-page">
 
@@ -26,7 +70,6 @@ export default function ContactPage() {
       <Section title="Temple Information" subtitle="Visit us or get in touch">
         <div className="grid md:grid-cols-2 gap-10">
 
-          {/* ADDRESS */}
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
               Temple Address
@@ -49,7 +92,6 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* VISITING INFO */}
           <div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
               Visiting the Mandir
@@ -65,54 +107,73 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* MAP + CONTACT FORM (SIDE BY SIDE) */}
-<Section title="Get in Touch" subtitle="Find us on map or send a message">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      {/* CONTACT FORM + MAP */}
+      <Section title="Get in Touch" subtitle="Find us on map or send a message">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-    {/* CONTACT FORM */}
-    <form className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-        />
-      </div>
+          {/* CONTACT FORM */}
+          <form onSubmit={handleSubmit} className="space-y-6">
 
-      <input
-        type="text"
-        placeholder="Subject"
-        className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-      />
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+                required
+              />
 
-      <textarea
-        rows={5}
-        placeholder="Your Message"
-        className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
-      />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+                required
+              />
+            </div>
 
-      <Button>Send Message</Button>
-    </form>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Subject"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+            />
 
-    {/* GOOGLE MAP */}
-    <div className="w-full h-87.5 md:h-105 rounded-2xl overflow-hidden shadow-lg">
-      <iframe
-        title="Shree Swaminarayan Mandir Palatine Map"
-        src="https://www.google.com/maps?q=Shree+Swaminarayan+Mandir+Palatine+Chicago&output=embed"
-        className="w-full h-full border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
+            <textarea
+              rows={5}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#FF7A00]"
+              required
+            />
 
-  </div>
-</Section>
+            <Button type="submit">
+              {loading ? "Sending..." : "Send Message"}
+            </Button>
 
+          </form>
+
+          {/* GOOGLE MAP */}
+          <div className="w-full h-87.5 md:h-105 rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              title="Shree Swaminarayan Mandir Palatine Map"
+              src="https://www.google.com/maps?q=Shree+Swaminarayan+Mandir+Palatine+Chicago&output=embed"
+              className="w-full h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+        </div>
+      </Section>
 
       {/* CTA */}
       <section className="py-20 bg-[#faf7f4]">
@@ -125,6 +186,7 @@ export default function ContactPage() {
             festivals, and spiritual gatherings at
             Vadtal Dham Palatine.
           </p>
+
           <div className="flex justify-center gap-4">
             <Button>Today&apos;s Darshan</Button>
             <Button variant="outline">Upcoming Events</Button>
