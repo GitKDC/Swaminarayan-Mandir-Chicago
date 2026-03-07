@@ -26,8 +26,8 @@ export default function DarshanPage() {
 
       {/* LIVE DARSHAN */}
       <Section
-        title ="Live Darshan & Aarti"
-        
+        title="Live Darshan & Aarti"
+        id="live-darshan"
       >
         <div className="flex flex-col gap-12 items-center">
 

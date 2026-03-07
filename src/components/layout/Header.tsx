@@ -1,28 +1,63 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { href, Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../ui/Button";
-import DonationModal from "../sections/donation/DonationModel";
+// import DonationModal from "../sections/donation/DonationModel";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  // { name: "About", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Darshan", href: "/darshan" },
   { name: "Divine Books", href: "/books" },
   { name: "Events", href: "/events" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
+
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [donationOpen, setDonationOpen] = useState(false);
+  // const [donationOpen, setDonationOpen] = useState(false);
 
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/" || location.pathname === "";
   const isTransparent = isHome && !scrolled;
+
+  // Handle About link click - scroll to section
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      // If already on home page, scroll smoothly
+      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // Navigate to home page
+      navigate("/");
+      // Scroll after navigation completes
+      setTimeout(() => {
+        const section = document.getElementById("about");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  };
+
+  // Handle Live button click - navigate to Darshan and scroll to live section
+  const handleLiveClick = () => {
+    navigate("/darshan");
+    setTimeout(() => {
+      const liveSection = document.getElementById("live-darshan");
+      if (liveSection) {
+        liveSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  };
 
   // Detect scroll
   useEffect(() => {
@@ -31,13 +66,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu or modal open
+  // Lock body scroll when menu open
   useEffect(() => {
-    document.body.style.overflow = menuOpen || donationOpen ? "hidden" : "";
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen, donationOpen]);
+  }, [menuOpen]);
 
   const textColor = isTransparent ? "text-white" : "text-black";
   const subTextColor = isTransparent ? "text-white/80" : "text-black/80";
@@ -90,30 +125,50 @@ export default function Header() {
             {/* DESKTOP NAV */}
             <nav className="hidden md:flex items-center gap-5 lg:gap-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`relative inline-block text-sm font-medium transition-colors
-                    ${
-                      isTransparent
-                        ? "text-white hover:text-[#FF7A00]"
-                        : "text-gray-700 hover:text-[#FF7A00]"
-                    }
-                    after:absolute after:left-0 after:-bottom-1
-                    after:h-0.5 after:w-0 after:bg-[#FF7A00]
-                    after:transition-all after:duration-300
-                    hover:after:w-full
-                  `}
-                >
-                  {link.name}
-                </Link>
+                link.name === "About" ? (
+                  <button
+                    key={link.name}
+                    onClick={handleAboutClick}
+                    className={`relative inline-block text-sm font-medium transition-colors
+                      ${
+                        isTransparent
+                          ? "text-white hover:text-[#FF7A00]"
+                          : "text-gray-700 hover:text-[#FF7A00]"
+                      }
+                      after:absolute after:left-0 after:-bottom-1
+                      after:h-0.5 after:w-0 after:bg-[#FF7A00]
+                      after:transition-all after:duration-300
+                      hover:after:w-full
+                    `}
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className={`relative inline-block text-sm font-medium transition-colors
+                      ${
+                        isTransparent
+                          ? "text-white hover:text-[#FF7A00]"
+                          : "text-gray-700 hover:text-[#FF7A00]"
+                      }
+                      after:absolute after:left-0 after:-bottom-1
+                      after:h-0.5 after:w-0 after:bg-[#FF7A00]
+                      after:transition-all after:duration-300
+                      hover:after:w-full
+                    `}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
 
             {/* DESKTOP CTA */}
             <div className="hidden md:block">
-              <Button size="sm" onClick={() => setDonationOpen(true)}>
-                Donation
+              <Button size="sm" onClick={handleLiveClick}>
+                Live
               </Button>
             </div>
 
@@ -146,33 +201,43 @@ export default function Header() {
       >
         <nav className="flex flex-col px-5 sm:px-6 py-6 gap-5 max-w-xl mx-auto">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-800 font-medium text-lg hover:text-[#FF7A00]"
-            >
-              {link.name}
-            </Link>
+            link.name === "About" ? (
+              <button
+                key={link.name}
+                onClick={handleAboutClick}
+                className="text-gray-800 font-medium text-lg hover:text-[#FF7A00] text-left"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="text-gray-800 font-medium text-lg hover:text-[#FF7A00]"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
 
           {/* MOBILE CTA INSIDE MENU */}
-          <div className="pt-4">
+          {/* <div className="pt-4">
             <Button className="w-full" onClick={() => setDonationOpen(true)}>
               Donation
             </Button>
-          </div>
+          </div> */}
         </nav>
       </aside>
 
       {/* DONATION MODAL */}
-      <DonationModal
+      {/* <DonationModal
         open={donationOpen}
         onClose={() => setDonationOpen(false)}
         onSubmit={(data) => {
           console.log("Donation Data:", data);
         }}
-      />
+      /> */}
     </>
   );
 }
