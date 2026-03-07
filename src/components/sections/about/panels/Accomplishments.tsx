@@ -457,7 +457,7 @@ const accomplishmentsData: TimelineItem[] = [
     id: 1,
     title: "Establishment of Ekantik Dharma & Spiritual Order",
     description:
-      "Established ekantik dharma, destroyed adharma, and restored true devotion and righteousness. Revealed the philosophy of the Vedas in simple words, teaching the eternal spiritual path for all souls.",
+      "• Initiated over 2000 sadhus, of which 500 were initiated as paramhans  He remains on earth through these sadhus.",
     images: [image1],
     category: "spiritual",
   },
@@ -465,7 +465,7 @@ const accomplishmentsData: TimelineItem[] = [
     id: 2,
     title: "Formation of the Sadhu & Paramhans Tradition",
     description:
-      "Initiated over 2000 sadhus, of which 500 were paramhans. Through these sadhus, Bhagwan Swaminarayan continues to guide devotees on earth, preserving spiritual wisdom and discipline.",
+      "• Built mandirs, and installed murtis for bhaktas to always have the darshan of Bhagvan’s murti.",
     images: [accomplishment2],
     category: "spiritual",
   },
@@ -473,23 +473,31 @@ const accomplishmentsData: TimelineItem[] = [
     id: 3,
     title: "Mandir Construction & Murti Pratishtha",
     description:
-      "Built mandirs and installed divine murtis so that bhaktas could always have darshan of Bhagvan’s murti and remain spiritually connected.",
+      "• Established two seats of leadership (gadi), and two acharyas to protect and promote the sampradaya.",
     images: [accomplishment3],
     category: "architectural",
   },
-  {
-    id: 4,
-    title: "Revelation, Authentication & Composition of Shastras",
-    description:
-      "Wrote sacred shastras, authenticated ancient scriptures, validated shastras written by His sadhus, and preserved true spiritual knowledge for future generations.",
-    images: [accomplishment6],
-    category: "literary",
-  },
+ {
+  id: 4,
+  title: "Revelation, Authentication & Composition of Shastras",
+  description:
+    "• Stopped the sacrifice of animals in yagnas.\n" +
+    "• Allowed members from all varnas (castes) into the Swaminarayan Sampraday.\n" +
+    "• Instructed His paramhans to collect alms from all sections of society.\n" +
+    "• Appointed people from the lower varnas as His personal attendants and ate along with them.\n" +
+    "• However, taking food from members of lower varnas was not supported by Him.\n" +
+    "• Dispelled the myth that moksh was not attainable by everyone.\n" +
+    "• Taught mumukshu bhaktas that the jeev is neither male nor female and everyone is equal in the eyes of Bhagvan.",
+  images: [accomplishment6],
+  category: "literary",
+},
+
   {
     id: 5,
     title: "Shikshapatri – Universal Code of Conduct",
     description:
-      "Summarised the essence of all shastras in the Shikshapatri, providing a universal moral, social, and spiritual code for humanity.",
+      "• Had good relationships with the British Imperial Government, so they gifted Him with land to build a mandir in Amdavad.\n"+
+      "• Maintained good relationships with people of other religions; had followers from other religions even though some of His attendants were Muslims, they wore a kanthi and followed the panchvartman",
     images: [accomplishment7],
     category: "literary",
   },
@@ -497,7 +505,7 @@ const accomplishmentsData: TimelineItem[] = [
     id: 6,
     title: "Humanitarian Service & Social Reforms",
     description:
-      "Opened charity houses for the poor, organised food and water aid during droughts, and eradicated cruel practices such as sati, female infanticide, and animal sacrifice, upholding compassion, ahimsa, and the sanctity of life.",
+      "• Gave the Governor of Bombay, Sir john Malcolm, a copy of the Shikshapatri (is kept in Bodleian Library in Oxford) ",
     images: [accomplishment8],
     category: "social",
   },
@@ -505,7 +513,7 @@ const accomplishmentsData: TimelineItem[] = [
     id: 7,
     title: "Equality, Education & Moksh for All",
     description:
-      "Encouraged education for women, broke caste barriers by allowing all varnas into the Sampraday, ate with lower varnas, and taught that the jeev is neither male nor female, proving that moksh is attainable by everyone.",
+      "• Encouraged education for women, broke caste barriers by allowing all varnas into the Sampraday, ate with lower varnas, and taught that the jeev is neither male nor female, proving that moksh is attainable by everyone.",
     images: [accomplishment7],
     category: "social",
   },
@@ -513,7 +521,7 @@ const accomplishmentsData: TimelineItem[] = [
     id: 8,
     title: "Leadership, Interfaith Harmony & Global Relations",
     description:
-      "Established two seats of leadership (gadīs) and appointed two acharyas to protect the Sampraday. Maintained harmony with all religions, had followers from other faiths, built strong relations with the British Government who gifted land for the Amdavad mandir, and presented the Shikshapatri to Sir John Malcolm (now preserved in the Bodleian Library, Oxford).",
+      "• Established two seats of leadership (gadīs) and appointed two acharyas to protect the Sampraday. Maintained harmony with all religions, had followers from other faiths, built strong relations with the British Government who gifted land for the Amdavad mandir, and presented the Shikshapatri to Sir John Malcolm (now preserved in the Bodleian Library, Oxford).",
     images: [accomplishment5],
     category: "social",
   },
@@ -563,7 +571,7 @@ export default function VerticalTimeline() {
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-gray-700 leading-relaxed text-lg">
+                    <p className="mt-3 text-gray-700 leading-relaxed text-lg whitespace-pre-line">
                       {item.description}
                     </p>
                   </div>
