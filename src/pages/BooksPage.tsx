@@ -26,13 +26,18 @@ const categories: Category[] = [
 
 
 // Helper function to download PDF
-const downloadPDF = (url: string, filename: string) => {
+const downloadPDF = async (url: string, filename: string) => {
+  const response = await fetch(url);
+  const blob = await response.blob();
+
+  const blobUrl = window.URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = url;
+  link.href = blobUrl;
   link.download = filename || "book.pdf";
+
   document.body.appendChild(link);
   link.click();
-  document.body.removeChild(link);
+  link.remove();
 };
 
 // Helper function to open PDF in browser
@@ -97,7 +102,7 @@ export default function BooksPage() {
           .filter((book) => book.category === "Primary Scripture")
           .map((book) => (
             <div
-              key={book._id}
+              key={book.id}
               className="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden"
             >
               {/* Top Image Area */}
@@ -137,13 +142,13 @@ export default function BooksPage() {
                       >
                         Download PDF <Download size={14} />
                       </button>
-                      <button
-                        onClick={() => openPDFInBrowser(book.pdfUrl.replace('/download', '/read'))}
+                      {/* <button
+                        onClick={() => openPDFInBrowser(book.pdfUrl)}
                         className="flex items-center gap-1 text-orange-500 hover:text-orange-600 font-medium text-sm cursor-pointer"
                         style={{ textDecoration: 'underline' }}
                       >
                         Read PDF
-                      </button>
+                      </button> */}
                     </div>
                   )}
                 </div>
@@ -197,7 +202,7 @@ export default function BooksPage() {
         {filtered.length > 0 ? (
           filtered.map((book) => (
             <div
-              key={book._id}
+              key={book.id}
               className="bg-white rounded-2xl p-6 border border-orange-100 shadow-sm hover:shadow-md transition"
             >
               <div className="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center mb-4">
@@ -224,13 +229,6 @@ export default function BooksPage() {
                     className="inline-flex items-center gap-1 text-orange-500 hover:text-orange-600 font-medium text-xs cursor-pointer"
                   >
                     Download PDF <Download size={12} />
-                  </button>
-                  <button
-                    onClick={() => openPDFInBrowser(book.pdfUrl.replace('/download', '/read'))}
-                    className="inline-flex items-center gap-1 text-orange-500 hover:text-orange-600 font-medium text-xs cursor-pointer"
-                    style={{ textDecoration: 'underline' }}
-                  >
-                    Read PDF
                   </button>
                 </div>
               )}

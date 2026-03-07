@@ -60,10 +60,11 @@ const AsymmetricGalleryGrid: React.FC<Props> = ({ images }) => {
     <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[220px] gap-6">
       {images.map((image, index) => {
         const isFeatured = index === 0;
-
+        // Use _id if present, else id, else fallback to index
+        const key = image._id || (image as any).id || index;
         return (
           <div
-            key={image._id}
+            key={key}
             className={`relative overflow-hidden rounded-2xl shadow-sm group
               ${
                 isFeatured
