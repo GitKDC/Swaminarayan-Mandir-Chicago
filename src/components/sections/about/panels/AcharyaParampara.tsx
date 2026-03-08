@@ -7,6 +7,8 @@ import Anandprasadji from "@/assets/Anandprasadji Maharaj.jpg";
 import Narendraprasadji from "@/assets/Narendraprasadji Maharaj.jpg";
 import Ajendraprasadji from "@/assets/Ajendraprasadji Maharaj.jpg";
 import Rakeshprasadji from "@/assets/Rakeshprasadji Maharaj.jpg";
+import AcharyaParampara1 from "@/assets/AcharyParampara 1.png";
+import AcharyaParampara2 from "@/assets/AcharyParampara 2.png";
 
 export default function AcharyaParampara() {
   type Acharya = {
@@ -97,6 +99,20 @@ export default function AcharyaParampara() {
     <div className="space-y-12">
       {/* INTRO */}
       <div className="max-w-4xl">
+        {/* Acharya Parampara Images */}
+        <div className="flex flex-col items-center gap-4 mb-6">
+          <img
+            src={AcharyaParampara1}
+            alt="Acharya Parampara 1"
+            className="w-full max-w-4xl h-auto object-contain rounded-lg"
+          />
+          <img
+            src={AcharyaParampara2}
+            alt="Acharya Parampara 2"
+            className="w-full max-w-4xl h-auto object-contain rounded-lg"
+          />
+        </div>
+
         <h3 className="text-3xl font-serif text-orange-800 mb-4">
           Acharya Parampara
         </h3>
