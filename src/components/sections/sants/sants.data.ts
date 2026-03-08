@@ -36,7 +36,7 @@ export const SANTS: Sant[] = [
   },
   {
     id: 4,
-    name: "Shastri Shri DharmPrakashdas",
+    name: "P.P.G.S. Shastri Shri DharmPrakashdas Dasji",
     role: "Resident Sant",
     image: guru,
     description:
@@ -44,7 +44,7 @@ export const SANTS: Sant[] = [
   },
 {
   id: 5,
-  name: "Shastri Shri Muktprakashdas",
+  name: "P.P.G.S. Shastri Shri Muktprakashdas Dasji",
   role: "Resident Sant",
   image: muktprakashdas,
   description:
