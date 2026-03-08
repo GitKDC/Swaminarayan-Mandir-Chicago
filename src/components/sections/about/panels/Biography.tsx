@@ -1,10 +1,22 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import purposeImg from '@/assets/purpose.webp'
-import birthImg from '@/assets/birth.webp'
-import vanvicharanImg from '@/assets/vanvicharan.webp'
-import bhagvatiImg from '@/assets/bhagwatidiksha.webp'
-import satsangImg from '@/assets/satsang.webp'
+import biographyImg from '@/assets/Biography.png'
+import biograpyImg2 from "@/assets/Biggraphy Img.png"
+import biographyImg3 from "@/assets/biographyImg3.png"
+import biographyImg4 from "@/assets/biographyImg4.png"
+import biographyImg5 from "@/assets/biographyImg5.png"
+import biographyImg6 from "@/assets/biographyImg6.png"
+import biographyImg7 from "@/assets/biographyImg7.png"
+import biographyImg8 from "@/assets/biographyImg8.png"
+import biographyImg9 from "@/assets/biographyImg9.png"
+import biographyImg10 from "@/assets/biographyImg10.png"
+import biographyImg11 from "@/assets/biographyImg11.png"
+
+
+
+
+
+
 
 interface BiographySection {
   title: string;
@@ -18,7 +30,7 @@ interface BiographySection {
 const biographyData: BiographySection[] = [
   {
     title: 'The Purpose Of His Avatar',
-    imageUrls: [purposeImg,birthImg],
+    imageUrls: [biographyImg,biograpyImg2],
     imagePosition: 'left',
     content: [
       'Swaminarayan Bhagwan incarnated on earth, along with His dham and some of His muktas, to establish ekantik dharma, and grant kalyan to those who became His bhaktas.',
@@ -29,7 +41,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Birth Details',
     subtitle: 'The Divine Arrival',
-    imageUrls: [birthImg],
+    imageUrls: [biographyImg3,biographyImg4],
     imagePosition: 'right',
     content: [
       'Born on Chaitra sud 9, VS 1837 (2nd April 1781) - Ramnavmi, in the sacred land of Chhapaiya, near Ayodhya.',
@@ -47,7 +59,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Van-Vicharan',
     subtitle: 'The Sacred Journey',
-    imageUrls:[ vanvicharanImg],
+    imageUrls: [biographyImg5],
     imagePosition: 'left',
     content: [
       'At the tender age of 11 years, 3 months, and 1 day, young Nilkanth embarked on a seven-year spiritual pilgrimage across the Indian subcontinent.',
@@ -64,7 +76,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Bhagvati Diksha',
     subtitle: 'The Sacred Initiation',
-    imageUrls: [bhagvatiImg,birthImg],
+    imageUrls: [biographyImg6,biographyImg7,biographyImg8,biographyImg9],
     imagePosition: 'right',
     content: [
       'On Kartik sud 11, VS 1857, at the age of 19 years, Nilkanth Varni met Ramanand Swami in Piplana and received initiation.',
@@ -81,7 +93,7 @@ const biographyData: BiographySection[] = [
   {
     title: 'Satsang',
     subtitle: 'The Divine Mission',
-    imageUrls: [satsangImg, birthImg, birthImg],
+    imageUrls: [biographyImg10,biographyImg11],
     imagePosition: 'left',
     content: [
       'For 30 years, 9 months, and 19 days, Swaminarayan Bhagwan spread divine wisdom through satsang.',
