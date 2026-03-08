@@ -98,7 +98,7 @@ useEffect(() => {
     <>
       {/* HEADER */}
       <header
-  className={`fixed top-0 left-0 right-0 h-16 md:h-20 w-full z-[60] transition-all duration-300
+  className={`fixed top-0 left-0 right-0 h-16 md:h-20 w-full z-60 transition-all duration-300
   ${
     scrolled
       ? "bg-white shadow-md"
