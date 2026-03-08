@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-
-import Hero1 from "@/assets/Hero1.jpeg"
-import Hero2 from "@/assets/Hero2.jpeg"
-import Hero3 from "@/assets/Hero3.jpeg"
+import Hero5 from "@/assets/Hero5.jpeg"
+import Hero6 from "@/assets/Hero6.jpeg"
 
 import { motion } from "framer-motion";
 
 const images = [
-   Hero1, Hero2, Hero3
+   Hero5, Hero6
 ];
 
 // const aboutSections = [
