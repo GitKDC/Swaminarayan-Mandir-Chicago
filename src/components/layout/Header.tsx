@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../ui/Button";
 import logoImg from "@/assets/Logo.png";
-// import DonationModal from "../sections/donation/DonationModel";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -14,60 +13,77 @@ const navLinks = [
   { name: "Events", href: "/events" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
-
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [donationOpen, setDonationOpen] = useState(false);
-
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHome = location.pathname === "/" || location.pathname === "";
-  const isTransparent = isHome && !scrolled;
 
-  // Handle About link click - scroll to section
-  const handleAboutClick = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const isHome = location.pathname === "/" || location.pathname === "";
+const isTransparent = isHome && !scrolled && !isMobile;
+  /* CLOSE MOBILE MENU PROPERLY */
+  const closeMenu = () => {
     setMenuOpen(false);
-    
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      // If already on home page, scroll smoothly
-      aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      // Navigate to home page
-      navigate("/");
-      // Scroll after navigation completes
-      setTimeout(() => {
-        const section = document.getElementById("about");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
+    document.body.style.overflow = "";
+
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   };
 
-  // Handle Live button click - navigate to Darshan and scroll to live section
+  /* ABOUT SCROLL */
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    closeMenu();
+
+    const aboutSection = document.getElementById("about");
+
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const section = document.getElementById("about");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+    }
+  };
+
+  /* LIVE BUTTON */
   const handleLiveClick = () => {
     navigate("/darshan");
+
     setTimeout(() => {
       const liveSection = document.getElementById("live-darshan");
       if (liveSection) {
         liveSection.scrollIntoView({ behavior: "smooth", block: "center" });
       }
-    }, 100);
+    }, 150);
+  };
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768); // Tailwind md breakpoint
   };
 
-  // Detect scroll
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+
+  return () => window.removeEventListener("resize", checkMobile);
+}, []);
+  /* SCROLL DETECTION */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when menu open
+  /* LOCK BODY SCROLL WHEN MENU OPEN */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -75,40 +91,46 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  const textColor = isTransparent ? "text-white" : "text-black";
-  const subTextColor = isTransparent ? "text-white/80" : "text-black/80";
+  const textColor = isTransparent ? "text-white" : "text-gray-900";
+  const subTextColor = isTransparent ? "text-white/80" : "text-gray-600";
 
   return (
     <>
       {/* HEADER */}
       <header
-        className={`fixed top-0 left-0 w-full z-60 transition-all duration-300
-          ${scrolled ? "bg-white shadow-md" : isHome ? "bg-transparent" : "bg-white"}
-        `}
-      >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="h-16 sm:h-16 md:h-20 flex items-center justify-between">
+  className={`fixed top-0 left-0 right-0 h-16 md:h-20 w-full z-[60] transition-all duration-300
+  ${
+    scrolled
+      ? "bg-white shadow-md"
+      : isHome
+      ? "bg-white md:bg-transparent"
+      : "bg-white shadow-sm"
+  }`}
+>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full">
 
             {/* LOGO */}
             <Link
               to="/"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 sm:gap-3 group"
+              onClick={closeMenu}
+              className="flex items-center gap-3"
             >
               <img
                 src={logoImg}
-                alt="Shree Swaminarayan Mandir Logo"
-                className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
+                alt="Mandir Logo"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
               />
 
               <div className="flex flex-col leading-tight">
                 <span
-                  className={`text-sm sm:text-base md:text-lg font-semibold transition-colors ${textColor}`}
+                  className={`text-sm md:text-lg font-semibold transition-colors ${textColor}`}
                 >
                   Shree Swaminarayan Mandir
                 </span>
+
                 <span
-                  className={`hidden sm:block text-[10px] sm:text-xs transition-colors ${subTextColor}`}
+                  className={`hidden sm:block text-xs ${subTextColor}`}
                 >
                   Palatine, Chicago
                 </span>
@@ -116,23 +138,18 @@ export default function Header() {
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav className="hidden md:flex items-center gap-5 lg:gap-8">
-              {navLinks.map((link) => (
+            <nav className="hidden md:flex items-center gap-7">
+              {navLinks.map((link) =>
                 link.name === "About" ? (
                   <button
                     key={link.name}
                     onClick={handleAboutClick}
-                    className={`relative inline-block text-sm font-medium transition-colors
-                      ${
-                        isTransparent
-                          ? "text-white hover:text-[#FF7A00]"
-                          : "text-gray-700 hover:text-[#FF7A00]"
-                      }
-                      after:absolute after:left-0 after:-bottom-1
-                      after:h-0.5 after:w-0 after:bg-[#FF7A00]
-                      after:transition-all after:duration-300
-                      hover:after:w-full
-                    `}
+                    className={`text-sm font-medium transition-colors
+                    ${
+                      isTransparent
+                        ? "text-white hover:text-[#FF7A00]"
+                        : "text-gray-700 hover:text-[#FF7A00]"
+                    }`}
                   >
                     {link.name}
                   </button>
@@ -140,36 +157,30 @@ export default function Header() {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`relative inline-block text-sm font-medium transition-colors
-                      ${
-                        isTransparent
-                          ? "text-white hover:text-[#FF7A00]"
-                          : "text-gray-700 hover:text-[#FF7A00]"
-                      }
-                      after:absolute after:left-0 after:-bottom-1
-                      after:h-0.5 after:w-0 after:bg-[#FF7A00]
-                      after:transition-all after:duration-300
-                      hover:after:w-full
-                    `}
+                    className={`text-sm font-medium transition-colors
+                    ${
+                      isTransparent
+                        ? "text-white hover:text-[#FF7A00]"
+                        : "text-gray-700 hover:text-[#FF7A00]"
+                    }`}
                   >
                     {link.name}
                   </Link>
                 )
-              ))}
+              )}
             </nav>
 
-            {/* DESKTOP CTA */}
+            {/* DESKTOP BUTTON */}
             <div className="hidden md:block">
               <Button size="sm" onClick={handleLiveClick}>
                 Live
               </Button>
             </div>
 
-            {/* MOBILE MENU ICON */}
+            {/* MOBILE MENU BUTTON */}
             <button
-              onClick={() => setMenuOpen((v) => !v)}
-              aria-label="Toggle menu"
-              className={`md:hidden text-2xl sm:text-3xl leading-none ${textColor}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              className={`md:hidden text-3xl ${textColor}`}
             >
               ☰
             </button>
@@ -179,26 +190,29 @@ export default function Header() {
 
       {/* MOBILE OVERLAY */}
       <div
-        onClick={() => setMenuOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300
-          ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
-        `}
+        onClick={closeMenu}
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300
+        ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
       />
 
-      {/* MOBILE MENU PANEL */}
+      {/* MOBILE MENU */}
       <aside
-        className={`fixed top-16 sm:top-16 md:top-20 left-0 right-0 z-40 md:hidden bg-white shadow-lg
-          transition-transform duration-300
-          ${menuOpen ? "translate-y-0" : "-translate-y-full"}
-        `}
+        className={`fixed top-16 md:top-20 left-0 right-0 bg-white shadow-lg z-50 md:hidden
+        transition-transform duration-300
+        ${menuOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <nav className="flex flex-col px-5 sm:px-6 py-6 gap-5 max-w-xl mx-auto">
-          {navLinks.map((link) => (
+        <nav className="flex flex-col gap-5 px-6 py-6 max-w-md mx-auto">
+
+          {navLinks.map((link) =>
             link.name === "About" ? (
               <button
                 key={link.name}
                 onClick={handleAboutClick}
-                className="text-gray-800 font-medium text-lg hover:text-[#FF7A00] text-left"
+                className="text-lg font-medium text-gray-800 hover:text-[#FF7A00] text-left"
               >
                 {link.name}
               </button>
@@ -206,31 +220,16 @@ export default function Header() {
               <Link
                 key={link.name}
                 to={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-gray-800 font-medium text-lg hover:text-[#FF7A00]"
+                onClick={closeMenu}
+                className="text-lg font-medium text-gray-800 hover:text-[#FF7A00]"
               >
                 {link.name}
               </Link>
             )
-          ))}
+          )}
 
-          {/* MOBILE CTA INSIDE MENU */}
-          {/* <div className="pt-4">
-            <Button className="w-full" onClick={() => setDonationOpen(true)}>
-              Donation
-            </Button>
-          </div> */}
         </nav>
       </aside>
-
-      {/* DONATION MODAL */}
-      {/* <DonationModal
-        open={donationOpen}
-        onClose={() => setDonationOpen(false)}
-        onSubmit={(data) => {
-          console.log("Donation Data:", data);
-        }}
-      /> */}
     </>
   );
 }

@@ -47,8 +47,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="pt-20 bg-bg-page">
-
+<main className=" bg-bg-page">
       {/* HERO */}
       <section className="bg-[#faf7f4] py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
