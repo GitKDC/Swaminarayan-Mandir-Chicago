@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { ExternalLink, Loader, Download } from "lucide-react";
+import {  Loader, Download } from "lucide-react";
 import { Heart, BookOpen, Star, Book } from "lucide-react";
-import { useBooks, type Book as BookType } from "@/hooks/useBooks";
+import { useBooks } from "@/hooks/useBooks";
 
 type Category =
   | "All"
@@ -40,15 +40,9 @@ const downloadPDF = async (url: string, filename: string) => {
   link.remove();
 };
 
-// Helper function to open PDF in browser
-const openPDFInBrowser = (url: string) => {
-  window.open(url, '_blank', 'noopener,noreferrer');
-};
-
-
 
 export default function BooksPage() {
-  const { books: apiBooks, loading, error, fetchBooks } = useBooks();
+  const { books: apiBooks, loading, error } = useBooks();
   const [active, setActive] = useState<Category>("All");
 
   // Only display backend books (no fallback)

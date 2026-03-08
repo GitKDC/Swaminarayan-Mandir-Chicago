@@ -5,7 +5,7 @@ interface Props {
   onSelect: (sant: Sant) => void;
 }
 
-export default function SantCard({ sant, onSelect }: Props) {
+export default function SantCard({ sant }: Props) {
   return (
     <div className="bg-bg-card rounded-xl py-6 px-4 text-center hover:shadow-xl transition">
      <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white">

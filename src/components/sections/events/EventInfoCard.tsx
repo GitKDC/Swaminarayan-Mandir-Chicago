@@ -12,7 +12,7 @@ type BackendEvent = {
   description?: string;
 };
 
-function getMonthAndDayRange(date: string | Date, startTime: string, endTime: string) {
+function getMonthAndDayRange(date: string | Date, _startTime: string, _endTime: string) {
   // date is ISO string or Date
   const d = new Date(date);
   // If multi-day, you would need start/end dates, but schema only has one date
