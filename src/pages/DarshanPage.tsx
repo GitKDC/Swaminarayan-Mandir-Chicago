@@ -13,45 +13,42 @@ export default function DarshanPage() {
           <p className="text-sm tracking-widest text-text-secondary mb-4">
             ॥ SHREE SWAMINARAYANO VI JAYATE ॥
           </p>
+
           <h1 className="font-heading text-4xl md:text-5xl text-gray-900 mb-6">
             Divine Darshan
           </h1>
+
           <p className="text-text-secondary max-w-3xl mx-auto">
             Experience the sacred presence of Lord Harikrishna Maharaj and
-            Shri Laxminarayan Dev through daily darshan, seva, and aarti at
-            Vadtal Dham Palatine, Chicago.
+            Shri Laxminarayan Dev through daily darshan, seva, and aarti.
           </p>
         </div>
       </section>
 
       {/* LIVE DARSHAN */}
-      <Section
-        title="Live Darshan & Aarti"
-        id="live-darshan"
-      >
+      <Section title="Live Darshan & Aarti">
         <div className="flex flex-col gap-12 items-center">
 
-          {/* YOUTUBE LIVE */}
           <div className="w-full max-w-7xl">
-            <YouTubeEmbed
-              videoId="LIVE_VIDEO_ID_HERE"
-              title="Vadtal Dham Palatine Live Darshan"
-              live
-            />
+            <YouTubeEmbed 
+            videoId="P5d0sfP4qxg"
+            live={true}/>
           </div>
 
-          {/* TEXT */}
-          <div className="w-full max-w-4xl mr-auto text-left ">
-            <p className="text-gray-700 leading-relaxed mb-6 mr-auto">
+          <div className="w-full max-w-4xl text-left">
+            <p className="text-gray-700 leading-relaxed mb-6">
               Connecting devotees across the world
-              <br/><br/>
-              For devotees who are unable to visit the temple in person,
-              daily live darshan and aarti are streamed through our
-              official YouTube channel.
               <br /><br />
-              Through live broadcasts of darshan, aarti, and katha,
-              devotees across the globe are able to remain connected
-              with the divine presence of Vadtal Dham.
+
+              For devotees who cannot visit the temple in person,
+              daily live darshan and aarti are streamed through
+              our official YouTube channel.
+
+              <br /><br />
+
+              Through live broadcasts of darshan and katha,
+              devotees across the globe remain connected
+              with the divine presence of Bhagwan.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -62,20 +59,19 @@ export default function DarshanPage() {
         </div>
       </Section>
 
-
       {/* DAILY DARSHAN */}
       <Section
         title="Divine Daily Darshan"
         subtitle="A sacred opportunity to connect with the Divine every day"
       >
         <p className="text-gray-700 leading-relaxed max-w-4xl">
-          At Vadtal Dham Palatine, the saints perform daily seva of
-          Lord Harikrishna Maharaj and Shri Laxminarayan Dev with
-          great devotion, discipline, and purity.
+          Saints perform daily seva of Lord Harikrishna Maharaj
+          and Shri Laxminarayan Dev with devotion and discipline.
+
           <br /><br />
-          Devotees from around the world visit the temple every day to
-          receive darshan and feel spiritually uplifted by the divine
-          presence of Bhagwan.
+
+          Devotees from around the world visit the temple daily
+          to receive divine darshan and spiritual blessings.
         </p>
       </Section>
 
@@ -87,15 +83,17 @@ export default function DarshanPage() {
         <div className="grid md:grid-cols-3 gap-6">
           <DarshanCard
             title="Daily Seva"
-            description="Saints perform daily seva of the Lord with purity and devotion, following the traditions of the Swaminarayan Sampraday."
+            description="Saints perform daily seva of the Lord with devotion."
           />
+
           <DarshanCard
             title="Divine Aarti"
-            description="Daily aarti is performed, allowing devotees to participate in collective worship and spiritual reflection."
+            description="Daily aarti allows devotees to participate in worship."
           />
+
           <DarshanCard
             title="Peace & Blessings"
-            description="Darshan provides inner peace, spiritual strength, and divine blessings to devotees from all walks of life."
+            description="Darshan provides inner peace and spiritual strength."
           />
         </div>
       </Section>
@@ -110,7 +108,7 @@ export default function DarshanPage() {
           <li>Kirtan Bhakti</li>
           <li>Katha & Spiritual Discourses</li>
           <li>Sant Darshan</li>
-          <li>Mahaprasad for devotees</li>
+          <li>Mahaprasad</li>
         </ul>
       </Section>
 
@@ -120,18 +118,19 @@ export default function DarshanPage() {
           <h2 className="font-serif text-3xl text-gray-900 mb-4">
             Receive Divine Blessings
           </h2>
+
           <p className="text-gray-700 mb-8">
-            Visit Shree Swaminarayan Mandir, Vadtal Dham Palatine, or
-            join us online to experience divine darshan, seva,
-            and spiritual bliss.
+            Visit the temple or join us online to experience
+            divine darshan and spiritual bliss.
           </p>
+
           <div className="flex justify-center gap-4">
-            <Button>Today&apos;s Darshan</Button>
+            <Button>Today's Darshan</Button>
             <Button variant="outline">Temple Schedule</Button>
           </div>
         </div>
       </section>
 
     </main>
-  )
+  );
 }

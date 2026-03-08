@@ -538,7 +538,7 @@ export default function VerticalTimeline() {
         <div className="max-w-7xl mx-auto px-6 relative">
 
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0 bg-red-200 -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-red-200 -translate-x-1/2" />
 
           <div className="space-y-32">
             {accomplishmentsData.map((item, index) => {
@@ -593,7 +593,7 @@ export default function VerticalTimeline() {
                         <img
                           src={img}
                           alt={item.title}
-                          className="w-full h-auto object-contain hover:scale-150 transition duration-500"
+                          className="w-full h-auto object-contain hover:scale-150 transition duration-800"
                         />
                       </div>
                     ))}

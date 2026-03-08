@@ -2,10 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom"
 import { Button } from "../ui/Button";
 import DonationModal from "../sections/donation/DonationModel";
-
+import { useNavigate } from "react-router-dom";
 export default function Footer() {
     const [donationOpen, setDonationOpen] = useState(false);
-  
+
+    const navigate=useNavigate();
+    const handleLiveClick = () => {
+    navigate("/darshan");
+    setTimeout(() => {
+      const liveSection = document.getElementById("live-darshan");
+      if (liveSection) {
+        liveSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
+  };
+
   return (
     <footer className="bg-[#1c1c1c] text-gray-300">
       {/* TOP */}
@@ -77,8 +88,8 @@ export default function Footer() {
             </p>
 
             <div className="mt-5">
-              <Button size="sm" onClick={() => setDonationOpen(true)}>
-                 Donation
+              <Button size="sm" onClick={handleLiveClick}>
+                 Live
             </Button>
             </div>
           </div>

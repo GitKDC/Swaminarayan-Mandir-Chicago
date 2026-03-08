@@ -21,6 +21,17 @@ function getMonthAndDayRange(date: string | Date, startTime: string, endTime: st
   const day = d.getDate();
   return { month, day };
 }
+const formatTime = (time: string) => {
+  const [hour, minute] = time.split(":").map(Number);
+  const date = new Date();
+  date.setHours(hour, minute);
+
+  return date.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+};
 
 export default function EventInfoCard({ event }: { event: BackendEvent }) {
   const { month, day } = getMonthAndDayRange(event.date, event.startTime, event.endTime);
@@ -37,7 +48,9 @@ export default function EventInfoCard({ event }: { event: BackendEvent }) {
       </h3>
 
       <div className="text-base text-gray-600 space-y-1 mb-2">
-        <p>Full Day</p>
+        <p className="mt-2 text-sm text-gray-600">
+          {formatTime(event.startTime)} - {formatTime(event.endTime)}
+        </p>
         <p>{event.location}</p>
       </div>
 
@@ -45,12 +58,7 @@ export default function EventInfoCard({ event }: { event: BackendEvent }) {
         {event.description}
       </p>
 
-      <a
-        href="#"
-        className="inline-flex items-center gap-2 text-[#6b3c1c] text-base font-semibold hover:gap-3 transition-all"
-      >
-        View Details →
-      </a>
+      
     </div>
   );
 }
