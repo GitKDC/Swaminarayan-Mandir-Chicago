@@ -7,7 +7,7 @@ import muktprakashdas from "../../../assets/muktprakshdasji .JPG.jpeg"
 export const SANTS: Sant[] = [
   {
     id: 1,
-    name: "Shri Rakeshprasadji Maharajishri",
+    name: "P.P.D.D.1008 Acharya Shri Rakeshprasadji Maharaj",
     role: "Spiritual Head",
     image: rakeshmaharaj,
     description:
@@ -20,7 +20,7 @@ export const SANTS: Sant[] = [
   },
   {
     id: 2,
-    name: "Guru Dharmaprasaddasji Swami",
+    name: "P.P.G.S. Shastri Shri Dharmprasad Dasji",
     role: "Resident Sant",
     image: guruvarya,
     description:
@@ -28,7 +28,7 @@ export const SANTS: Sant[] = [
   },
   {
     id: 3,
-    name: "Guru Bhaktiprakashdasji",
+    name: "P.P.G.S. Shastri Shri Bhaktiprakash Dasji",
     role: "Spiritual Lead",
     image: bhaktiprakashji,
     description:
