@@ -130,7 +130,7 @@ useEffect(() => {
                 </span>
 
                 <span
-                  className={`hidden sm:block text-xs ${subTextColor}`}
+                  className={`block text-xs ${subTextColor}`}
                 >
                   Palatine, Chicago
                 </span>

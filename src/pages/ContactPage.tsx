@@ -74,8 +74,9 @@ export default function ContactPage() {
               Temple Address
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              ॐ Shree Swaminarayan Mandir<br />
-              Vadtal Dham, Palatine<br />
+              Shree Swaminarayan Temple<br />
+              (Vadtal Dham) Palatine,<br />
+              Chicago IL USA<br/>
               1521 N Rand Road<br />
               Palatine, IL – 60074
             </p>
