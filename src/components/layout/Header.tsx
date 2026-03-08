@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { href, Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "../ui/Button";
+import logoImg from "@/assets/Logo.png";
 // import DonationModal from "../sections/donation/DonationModel";
 
 const navLinks = [
@@ -94,19 +95,11 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-2 sm:gap-3 group"
             >
-              <div
-                className={`w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 transition-colors
-                  ${
-                    isTransparent
-                      ? "bg-white/10 border-white/30 group-hover:border-white"
-                      : "bg-primary/10 border-border-muted group-hover:border-primary"
-                  }
-                `}
-              >
-                <span className="text-lg sm:text-xl font-serif font-bold text-orange-400">
-                  ॐ
-                </span>
-              </div>
+              <img
+                src={logoImg}
+                alt="Shree Swaminarayan Mandir Logo"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
+              />
 
               <div className="flex flex-col leading-tight">
                 <span
